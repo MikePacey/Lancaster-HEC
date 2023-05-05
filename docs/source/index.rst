@@ -1,17 +1,14 @@
-Welcome to Lumache's documentation!
-===================================
+HEC 3.0 Documentation
+=====================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+This documentation is a guide to using the HEC 3.0 test bed,
+in particular the SLURM jobs scheduler which will replace
+the current SGE job scheduler. The structure of this guide
+is broadly similar to the current official HEC user guide
+so you can easily compare the two.
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
-
-.. note::
-
-   This project is under active development.
+.. note: The HEC 3.0 test bed is udner development, so check
+back regularly to see what changes have been made to best practice.
 
 Contents
 --------
