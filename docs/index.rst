@@ -17,7 +17,7 @@ Contents
 .. toctree::
    :maxdepth: 2
 
-   soft
    intro 
    howitworks
+   soft
    software/ansys
