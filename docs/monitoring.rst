@@ -18,6 +18,7 @@ your jobs currently running or waiting to run on the cluster:
 The output columns are fairly self-explanatory:
 
 .. list-table::
+
   * - JOBID
     - A number used to uniquely identify your job within the job scheduling system. Use this number when you want to terminate a job via the scancel command.
   * - PARTITION
@@ -35,13 +36,14 @@ The output columns are fairly self-explanatory:
   * - NODELIST(REASON)
     - For running jobs this is the list of compute nodes the job is running on. For pending jobs this will give the reason for the pending status (e.g. Resources if the cluster is busy, or Priority if other pending jobs have a higher priorty to run
 
-The default action for squeue is to output basic information on all jobs. The list of all users' jobs is usually very long!
+The default action for **squeue** is to output basic information on all jobs. 
+The list of all users' jobs is usually very long!
 
 Job Lifecycle
 -------------
 
 A job's lifecycle can be tracked via the ST (state) field in the output 
-from squeue. All jobs start with a status of PD (pending). If the cluster 
+from **squeue**. All jobs start with a status of PD (pending). If the cluster 
 is busy, or the job has requested a resource which is currently fully 
 utilised, then a job may spend some time in this state. (For more 
 information on requesting resources, please refer to Requesting 
@@ -82,7 +84,7 @@ averages 4.8GB per job slot). Please refer to Running large memory jobs on the H
 for an explanation of job memory reservation requests.
 
 .. note::
-   Users granted access to the HEC as an exception to usual access policy will have
+   Users granted access to the HEC as an exception to the usual access policy will have
    smaller quotas than the examples given.
 
 Resource quotas can be viewed using the **qquota** command:
@@ -158,7 +160,7 @@ Each slurm job is managed by a Linux *control group*, which on a typical
 Linux desktop or server can be viewed via the **systemd-cgtop** command. 
 On the HEC, user jobs' cgroup info can be viewed using the **qcgtop** command.
 
-Consider the following job output, from **squeue --me** which shows a 
+Consider the following job output from **squeue --me**, which shows a 
 2-node parallel job running:
 
 .. code-block:: console
@@ -171,7 +173,7 @@ running job can be viewed vie the command
 
 .. code-block:: console
 
-  qcgtop -u testuser
+  wayland-2020% qcgtop -u testuser
 
          Job   %CPU Memory
          ---   ---- ------
@@ -181,8 +183,8 @@ running job can be viewed vie the command
     job_1142 1590.8   1.3G
 
 The output shows the CPU and memory utilisation of each job on each node. 
-The CPU usage reported is close to 1600%, which is the expected value for 
-parallel jobs fully utilising all CPUs on a 16-core compute node.
+The CPU usage reported in this example is close to 1600%, which is the 
+expected value for parallel jobs fully utilising all CPUs on a 16-core compute node.
 
 Reviewing logs of completed jobs
 --------------------------------
@@ -190,10 +192,10 @@ Reviewing logs of completed jobs
 A summary of completed jobs are stored in a database, which can be 
 interrogated via the **sacct** command. The database structure is 
 complex, so it's often best to view job summaries via wrapper scripts 
-which use **sacct** under the bonnet.
+which use **sacct** under the bonnet as described below.
 
-Job resource summaries via seff
--------------------------------
+Job resource usage summaries via seff
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The job resource usage summary shown in the mailback notification 
 for job completion above can be run at any time via the **seff** 
@@ -221,7 +223,7 @@ manually stopped via the scancel command after half an hour, hence
 the job state of CANCELLED).
 
 Job summaries via qacct
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The **qacct** command acts as a wrapper to **sacct** an extracts 
 relevant job information. Using the previous job as an example, 

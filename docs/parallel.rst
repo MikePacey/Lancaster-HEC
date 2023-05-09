@@ -1,0 +1,42 @@
+Parallel jobs
+=============
+
+The web page explaining basic job submission assumed that jobs
+were serial (single core) and so were submitted to the serial
+partition (queueu). Many research applications are able to use
+more than single core in order to speed up their runs. Such jobs
+are submitted to the parallel partition. The HEC supports both
+shared-memory and distributed memory paraellism, as explained
+in the sections below.
+
+**Shared memory parallelism** refers to parallel applications which must
+have all their components (e.g. process or threads) all running
+on the same compute node. OpenMP (the Open Multiprocessing standard)
+is a common standard used to create multi-threaded applications,
+whcih support shared memory parallelism.
+
+**Distributed memory parallelism** refers to parallel applications which
+can run across multiple compute nodes, and their components communicate
+across the network. MPI (the Message Passing Interface) is a common
+standard used to create multi-process applications, along with an application
+launcher which will distribute the application's processes across compute
+nodes.
+
+.. note::
+
+  Applications must be specifically written to run in parallel - either
+  shared- or distrubted- memory. Submitting a non-parallel (ie, serial)
+  job to the parallel queue won't result in any speed up - it will
+  run in serial.
+
+.. tip::
+
+  No parallel application scales to large number of cores perfectly, and
+  the scalability varies both between applications and sometimes between
+  different use cases in the same application. In fact, many applications will
+  run slower if required to run on too many cores, as the constant
+  communications required between the different components of the application
+  will eventually dominate over 'real' computational work.
+  When trying out a new
+  parallel application (or a new model) submit some test jobs to find
+  out the sweet spot for scaling for your particular workload.

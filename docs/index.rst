@@ -24,5 +24,9 @@ Contents
    envmods
    submit
    monitoring
+   largemem
+   jobarrays
+   mpi
+   openmp
    soft
    software/ansys
