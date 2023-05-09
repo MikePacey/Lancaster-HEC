@@ -39,8 +39,7 @@ A summary of the different filestores area is given below:
 
    * - File Area	
      - Quota
-     - Backup
-     - Policy
+     - Backup Policy
      - File Retention policy
    * - home
      - 10G
