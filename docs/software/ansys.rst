@@ -11,17 +11,17 @@ Cfx5solve batch jobs may be run by creating a batch job control script i
 (such as the example below, which uses ansys_job.com):
 
 .. highlight:: bash
-#!/bin/bash
+  #!/bin/bash
 
-#SBATCH -p serial
-#SBATCH --mem=4G
+  #SBATCH -p serial
+  #SBATCH --mem=4G
 
-source /etc/profile
-module add ansys/21.2
+  source /etc/profile
+  module add ansys/21.2
 
-echo $MYHOSTLIST
+  echo $MYHOSTLIST
 
-cfx5solve -batch -def mymodel.def
+  cfx5solve -batch -def mymodel.def
 ::
 
 A sample parallel job script for cfx5solve for Ansys 19 or earlier
