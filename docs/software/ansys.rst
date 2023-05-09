@@ -31,7 +31,8 @@ A sample parallel job script for cfx5solve for Ansys 19 or earlier
 For models suitable for parallel running, the following parallel job i
 template can be used, which runs on 2 of the 16-core compute nodes:
 
-.. highlight:: bash
+.. code-block:: sh
+
 #!/bin/bash
 
 #SBATCH -p parallel
@@ -54,7 +55,8 @@ A sample parallel job script for cfx5solve for Ansys 20 or later
 For models suitable for parallel running, the following parallel job 
 template can be used, which runs on two of the 16-core compute nodes:
 
-.. highlight:: bash
+.. code-block:: sh
+
 #!/bin/bash
 
 #SBATCH -p parallel
@@ -81,7 +83,8 @@ A sample parallel job script for fluent for Ansys 19 or earlier
 For models suitable for parallel running, the following parallel 
 job template can be used:
 
-.. highlight:: bash
+.. code-block:: sh
+
 #!/bin/bash
 
 #SBATCH -p parallel
@@ -105,7 +108,8 @@ A sample parallel job script for fluent for Ansys 20 and later
 For models suitable for parallel running, the following parallel 
 job template can be used:
 
-.. highlight:: bash
+.. code-block:: sh
+
 #!/bin/bash
 
 #SBATCH -p parallel
