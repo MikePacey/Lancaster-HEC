@@ -22,5 +22,7 @@ Contents
    linux
    filestore
    envmods
+   submit
+   monitoring
    soft
    software/ansys
