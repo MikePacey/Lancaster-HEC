@@ -10,7 +10,8 @@ A sample serial job script for cfx5solve
 Cfx5solve batch jobs may be run by creating a batch job control script i
 (such as the example below, which uses ansys_job.com):
 
-.. code-block:: bash
+.. code-block:: sh
+
   #!/bin/bash
 
   #SBATCH -p serial
