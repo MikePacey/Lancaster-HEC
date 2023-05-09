@@ -17,7 +17,7 @@ for specific amounts of memory (for large memory jobs), or
 multiple nodes (in the case of parallel jobs).
 
 .. image:: HEC-User.png
-  :alt: Alternative text
+  :alt: Overview of main components of the HEC 
 
 Hardware
 --------
