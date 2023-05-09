@@ -19,5 +19,6 @@ Contents
    intro 
    howitworks
    login
+   linux
    soft
    software/ansys
