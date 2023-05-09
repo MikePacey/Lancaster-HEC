@@ -33,20 +33,20 @@ template can be used, which runs on 2 of the 16-core compute nodes:
 
 .. code-block:: sh
 
-#!/bin/bash
+  #!/bin/bash
 
-#SBATCH -p parallel
-#SBATCH --nodes=2
-#SBATCH -C node_type=10GethAny
-#SBATCH --exclusive
+  #SBATCH -p parallel
+  #SBATCH --nodes=2
+  #SBATCH -C node_type=10GethAny
+  #SBATCH --exclusive
 
-source /etc/profile
-module add ansys/17.2
+  source /etc/profile
+  module add ansys/17.2
 
-echo $MYHOSTLIST
+  echo $MYHOSTLIST
 
-cfx5solve -batch -def mymodel.def \
-  -par-dist "$MYHOSTLIST" -start-method "HP MPI Distributed Parallel" 
+  cfx5solve -batch -def mymodel.def \
+    -par-dist "$MYHOSTLIST" -start-method "HP MPI Distributed Parallel" 
 ::
 
 A sample parallel job script for cfx5solve for Ansys 20 or later
@@ -57,20 +57,20 @@ template can be used, which runs on two of the 16-core compute nodes:
 
 .. code-block:: sh
 
-#!/bin/bash
+  #!/bin/bash
 
-#SBATCH -p parallel
-#SBATCH --nodes=2
-#SBATCH -C node_type=10GethAny
-#SBATCH --exclusive
+  #SBATCH -p parallel
+  #SBATCH --nodes=2
+  #SBATCH -C node_type=10GethAny
+  #SBATCH --exclusive
 
-source /etc/profile
-module add ansys/21.2
+  source /etc/profile
+  module add ansys/21.2
 
-echo $MYHOSTLIST
+  echo $MYHOSTLIST
 
-cfx5solve -batch -def mymodel.def -par-dist "$MYHOSTLIST" \
-    -start-method "Open MPI Distributed Parallel"
+  cfx5solve -batch -def mymodel.def -par-dist "$MYHOSTLIST" \
+      -start-method "Open MPI Distributed Parallel"
 ::
 
 where mymodel.def is the name of the Solver Input File. Ansys uses 
@@ -85,17 +85,17 @@ job template can be used:
 
 .. code-block:: sh
 
-#!/bin/bash
+  #!/bin/bash
 
-#SBATCH -p parallel
-#SBATCH --nodes=2
-#SBATCH --exclusive
-#SBATCH -C node_type=10Geth64G
+  #SBATCH -p parallel
+  #SBATCH --nodes=2
+  #SBATCH --exclusive
+  #SBATCH -C node_type=10Geth64G
 
-source /etc/profile
-module add ansys/19.1
+  source /etc/profile
+  module add ansys/19.1
 
-fluent 3ddp -g -slurm -t${NSLOTS} -pdefault -i runjob.jou
+  fluent 3ddp -g -slurm -t${NSLOTS} -pdefault -i runjob.jou
 ::
 
 Where runjob.jou is the name of your fluent journal file. Ansys
@@ -110,17 +110,17 @@ job template can be used:
 
 .. code-block:: sh
 
-#!/bin/bash
+  #!/bin/bash
 
-#SBATCH -p parallel
-#SBATCH --nodes=2
-#SBATCH --exclusive
-#SBATCH -C node_type=10Geth64G
+  #SBATCH -p parallel
+  #SBATCH --nodes=2
+  #SBATCH --exclusive
+  #SBATCH -C node_type=10Geth64G
 
-source /etc/profile
-module add ansys/19.1
+  source /etc/profile
+  module add ansys/19.1
 
-fluent 3ddp -g -slurm -t${NSLOTS} -mpi=openmpi -i runjob.jou
+  fluent 3ddp -g -slurm -t${NSLOTS} -mpi=openmpi -i runjob.jou
 ::
 
 Where runjob.jou is the name of your fluent journal file. Ansys 
