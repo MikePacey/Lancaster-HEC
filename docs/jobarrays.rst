@@ -12,7 +12,7 @@ multiple similar jobs with a single command and a single job script.
 Job arrays can be submitted by adding the **-a** directive to the 
 job script, as in the following example:
 
-.. code-break:: bash
+.. code-block:: bash
 
   #!/bin/bash
 
@@ -56,8 +56,8 @@ and an underscore followed by the task ID.
 .. tip:: 
   It may look a little limited that the task ID can only take on a positive 
   integer value, as this may not immediately match your requirements - e.g. 
-  floating point values or strings. However, job shell scripts are written 
-  in bash, so it normally doesn't take much scripting to convert that integer 
+  floating point values or strings. However, job scripts are written 
+  in bash, so it normally doesn't take much bash scripting to convert that integer 
   into a more suitable value.
 
 Monitoring job arrays

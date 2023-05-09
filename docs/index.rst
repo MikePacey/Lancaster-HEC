@@ -29,5 +29,6 @@ Contents
    parallel
    mpi
    openmp
+   nodetypes
    soft
    software/ansys

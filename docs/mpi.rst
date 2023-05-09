@@ -51,7 +51,8 @@ can often cause library conflicts and other errors.
 Submitting an MPI job
 ---------------------
 
-Here is a sample job to run the IMB benchmark across 2 nodes, and 16 cores per node:
+Here is a sample job to run a parallel application a called **myapp**
+across 2 compute nodes, with 16 cores per node:
 
 .. code-block:: bash
 
@@ -85,7 +86,7 @@ The next three lines together specify the size of parallel job you're requesting
 
 .. code-block:: bash
 
-#SBATCH --exclusive
+  #SBATCH --exclusive
 
 This line indicates that the job is requesting exclusive access to one or 
 more compute nodes. The requested node(s) will be used exclusively for the 

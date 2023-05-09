@@ -3,8 +3,8 @@ Parallel jobs
 
 The web page explaining basic job submission assumed that jobs
 were serial (single core) and so were submitted to the serial
-partition (queueu). Many research applications are able to use
-more than single core in order to speed up their runs. Such jobs
+partition (queue). Many research applications are able to use
+multiple cores in order to speed up their runs. Such jobs
 are submitted to the parallel partition. The HEC supports both
 shared-memory and distributed memory paraellism, as explained
 in the sections below.
@@ -13,7 +13,7 @@ in the sections below.
 have all their components (e.g. process or threads) all running
 on the same compute node. OpenMP (the Open Multiprocessing standard)
 is a common standard used to create multi-threaded applications,
-whcih support shared memory parallelism.
+which support shared memory parallelism.
 
 **Distributed memory parallelism** refers to parallel applications which
 can run across multiple compute nodes, and their components communicate
@@ -31,7 +31,7 @@ nodes.
 
 .. tip::
 
-  No parallel application scales to large number of cores perfectly, and
+  No parallel application scales up to larger numbers of cores perfectly, and
   the scalability varies both between applications and sometimes between
   different use cases in the same application. In fact, many applications will
   run slower if required to run on too many cores, as the constant
