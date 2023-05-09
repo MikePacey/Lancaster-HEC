@@ -34,7 +34,7 @@ the job terminates.
 
 A summary of the different filestores area is given below:
 
-.. list-table:: Title
+.. list-table:: 
    :header-rows: 1
 
    * - File Area	
@@ -67,7 +67,7 @@ commands within job scripts.
 Viewing filestore quota and usage
 ---------------------------------
 
-You can view your home, storage quota and 
+You can view your home, storage and 
 scratch usage at any time using the command 
 **gpfsquota**, which presents output from the 
 *mmlsquota* command in a more readable format. 
@@ -195,7 +195,7 @@ file paths should start from there. For storage, scratch or other
 filestore areas using the full directory path is recommended. If 
 you have difficulty determining the full path to a directory a useful 
 approach is to login to the HEC in a separate window, use the **cd** command 
-to change to the desired directory and then run the command **pwd* (print 
+to change to the desired directory and then run the command **pwd** (print 
 working directory) which will show the full path to the directory. This 
 can then be copy-and-pasted into your desktop/IUS window containing the **scp** command.
 
@@ -229,7 +229,7 @@ To connect to a folder on luna, smbclient needs two pieces of information:
 **Faculty code**: Faculty codes are typically the faculty's acronym 
 (e.g. FST for Faculty of Science and Technology, FASS for Faculty 
 of Applied and Social Sciences) and are viewable from the top level 
-of the *\\luna* tree under the Windows File Explorer.
+of the *\\\\luna* tree under the Windows File Explorer.
 
 **The folder path**: The path is the series of subfolders required 
 to navigate the tree to the required subdirectory.
