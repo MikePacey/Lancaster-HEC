@@ -31,4 +31,5 @@ Contents
    openmp
    nodetypes
    soft
+   software/compilers
    software/ansys
