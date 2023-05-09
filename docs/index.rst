@@ -26,6 +26,7 @@ Contents
    monitoring
    largemem
    jobarrays
+   parallel
    mpi
    openmp
    soft

@@ -1,4 +1,5 @@
 Job arrays - Submitting multiple similar jobs
+=============================================
 
 For workloads such as Monte Carlo simulations and parameter 
 studies, it is often necessary to run the same program multiple 
