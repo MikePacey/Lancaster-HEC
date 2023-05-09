@@ -3,9 +3,12 @@ How the HEC Works
 
 The HEC has three basic components:
 
-a login node, where users login in to submit jobs;
-the compute nodes, which run those jobs; and
-dedicated file systems, which share users' files and applications across the cluster.
+* a login node, where users login in to submit jobs;
+
+* the compute nodes, which run those jobs; and
+
+* dedicated file systems, which share users' files and 
+  applications across the cluster.
 
 From the login node, users create a batch job script which 
 describes the tasks their job(s) are to perform in a format 
