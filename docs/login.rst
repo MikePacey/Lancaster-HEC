@@ -12,7 +12,7 @@ application offering support for Secure Shell (ssh).
 From the Interactive Unix Service (IUS) or any local Linux desktop, 
 you can access the HEC by typing the following in a session window:
 
-.. code-block: console
+.. code-block:: console
 
   ssh -X username@wayland.hec.lancaster.ac.uk
 
@@ -29,7 +29,7 @@ for a Linux desktop HEC login as described above.
 When logging in for the first time you may see a message similar to 
 the following:
 
-.. code-block: console
+.. code-block:: console
 
   Host key not found from the list of known hosts.
   Are you sure you want to continue connecting (yes/no)?
