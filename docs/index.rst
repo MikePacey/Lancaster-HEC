@@ -20,5 +20,6 @@ Contents
    howitworks
    login
    linux
+   filestore
    soft
    software/ansys
