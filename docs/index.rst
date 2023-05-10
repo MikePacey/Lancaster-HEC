@@ -22,6 +22,10 @@ Contents
    linux
    filestore
    envmods
+::
+
+.. tocktree::
+   :caption: Job Submission
    submit
    monitoring
    largemem
