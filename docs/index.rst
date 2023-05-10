@@ -38,3 +38,4 @@ Contents
    software/cst
    software/gromacs
    software/gsl
+   software/lammps
