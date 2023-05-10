@@ -20,6 +20,7 @@ Contents
 
    intro 
    howitworks
+   getaccount
 
 .. toctree::
    :caption: HEC Basics
@@ -52,7 +53,6 @@ Contents
    :caption: Job templates for popular software
    :maxdepth: 1
 
-   soft
    software/compilers
    software/ansys
    software/comsol
