@@ -19,7 +19,7 @@ This area should typically be used to store job outputs, your
 own applications, or other research data that can be regenerated if lost.
 
 The **scratch** area is a large (10T) shared area; files written 
-to it are automatically deleted after four weeks weeks. The 
+to it are automatically deleted after four weeks. The 
 scratch area is intended as a place to hold very large job output 
 files and other data files for a limited period of time - files 
 will be deleted from scratch four weeks after they were last written to.
@@ -115,13 +115,13 @@ especially when running hundreds of jobs at the same time. For
 applications which need a local copy of an input file, consider 
 using the ``ln -s`` command to create a soft link (short cut) 
 rather than a full copy of the file. If output files need to 
-be placed elsewhere on the filesystem, consider using the **mv** 
+be placed elsewhere on the filesystem, consider using the ``mv`` 
 (file move) command.
 
 **Avoid directory recursion/file searching within jobs.**
 Having multiple jobs search for specific files through a large 
 directory hierarchy can place a high load on the filesystem. 
-Avoid use of recursive commands such as **find** within jobs.
+Avoid use of recursive commands such as ``find`` within jobs.
 
 **Use the temp directory for temporary files.**
 The temp directory (referenced by the *$TMPDIR* variable) 
@@ -133,10 +133,10 @@ temporary/transient files in temp.
 **Clean up your filestore regularly.**
 With the ability to run hundred of jobs simultaneously, user 
 filestore can quickly become cluttered with files (e.g. job 
-stdout and stderr files). Small files in particular have a 
-relatively high space overhead - even a small file will con
-sume 32k of quota due to metadata and RAID overheads. An area 
-filled with large numbers of small files can exhaust quota 
+stdout and stderr files). Small files in particular have a relatively high
+space overhead - even a small file will consume 32k of quota due to metadata
+and RAID overheads. An area filled with large numbers of small files can
+exhaust quota 
 more quickly than expected.
 
 **Offload valuable data to a permanent location.**
@@ -181,7 +181,7 @@ The first time you use ``scp``, it may prompt you with the following:
   Host key not found from the list of known hosts.
   Are you sure you want to continue connecting (yes/no)? yes
 
-Reply with yes and you will then receive a prompt for your password. With 
+Reply with *yes* and you will then receive a prompt for your password. With 
 subsequent logins you will only have to give your password.
 
 To copy directories and their contents, use ``scp -r``, for example :
@@ -190,7 +190,7 @@ To copy directories and their contents, use ``scp -r``, for example :
 
   scp -r mydirectory username@wayland.hec.lancaster.ac.uk:mydirectory
 
-The scp command defaults to your home directory on the HEC, so relative 
+The ``scp`` command defaults to your home directory on the HEC, so relative 
 file paths should start from there. For storage, scratch or other 
 filestore areas using the full directory path is recommended. If 
 you have difficulty determining the full path to a directory a useful approach
@@ -211,9 +211,10 @@ Transferring files to the HEC from a Windows PC
 Transferring files between the HEC and a local desktop PC requires your 
 PC to run a client application capable of the *secure file transfer protocol*. 
 There are several applications which support this. One such application is 
-*WinSCP*, which can be found on `AppsAnywhere<https://apps.lancaster.ac.uk/>`_.
+*WinSCP*, which can be found on `AppsAnywhere <https://apps.lancaster.ac.uk/>`_.
 
-.. tip:
+.. tip::
+
   Take care to ensure that text files such as job scripts are transferred in *text 
   mode* in order to avoid problems caused by format differences between Unix 
   and Windows text files. Binary files (i.e. files whose contents are not 
@@ -262,6 +263,7 @@ list of possible commands.
 Here's an example of uploading a file to the folder:
 
 .. code-block:: console
+
   smb: \py\gondor\> put myfile 
 
   putting file myfile as \py\gondor\myfile (529105.6 kb/s) (average 529105.6 kb/s)
