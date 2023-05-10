@@ -1,6 +1,8 @@
 Using environment modules
 =========================
 
+.. _envmods:
+
 About environment modules
 -------------------------
 
