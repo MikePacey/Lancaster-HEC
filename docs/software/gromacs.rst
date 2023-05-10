@@ -33,7 +33,7 @@ GROMACS batch jobs may be run by creating a batch job script.
 The following example runs a single-precision build of GROMACS 
 on two 16-core compute nodes:
 
-.. code-break:: bash
+.. code-block:: bash
 
   #!/bin/bash
 
@@ -72,4 +72,4 @@ hostfile with (16 / 8) = 2 processes per node.
 Further Reading
 ---------------
 
-Further information can be found in the GROMACS `User Manuals <https://manual.gromacs.org/documentation/>`
+Further information can be found in the GROMACS `User Manuals <https://manual.gromacs.org/documentation/>`_
