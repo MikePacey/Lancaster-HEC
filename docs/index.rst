@@ -33,3 +33,4 @@ Contents
    soft
    software/compilers
    software/ansys
+   software/comsol
