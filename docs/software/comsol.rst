@@ -1,10 +1,10 @@
-The COMSOL Multiphysics Package on the HEC
-==========================================
+The COMSOL Multiphysics Package
+===============================
 
 The HEC currently hosts versions of the COMSOL multiphysics 
 modelling suite, with licenses supplied by the Engineering 
 (for version 5.2a) and Physics (for version 5.1) departments. 
-Please check with the relevant Departments' IT Liaison to 
+Please check with the relevant Department's IT Liaison to 
 ensure you have access to these externally-hosted licenses.
 
 A sample serial job script for COMSOL

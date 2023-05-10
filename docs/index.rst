@@ -34,3 +34,4 @@ Contents
    software/compilers
    software/ansys
    software/comsol
+   software/cp2k
