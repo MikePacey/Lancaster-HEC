@@ -30,7 +30,7 @@ full list of available versions, run the command:
 
 Once the chosen module is added, Stata can then be invoked within a job 
 script with the stata-mp command. See the section on 
-:ref:`Environment Modules <envmods>` for more details.
+:doc:`envmods` for more details.
 
 A simple serial batch job script for Stata
 ------------------------------------------
