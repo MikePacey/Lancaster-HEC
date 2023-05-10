@@ -23,12 +23,6 @@ Contents
    linux
    filestore
    envmods
-::
-
-.. toctree::
-   :maxdepth: 1
-   :caption: Job Submission
-
    submit
    monitoring
    largemem
@@ -37,15 +31,4 @@ Contents
    mpi
    openmp
    nodetypes
-   soft
-   software/compilers
-   software/ansys
-   software/comsol
-   software/cp2k
-   software/cst
-   software/gromacs
-   software/gsl
-   software/lammps
-   software/namd
-   software/r.rst
-   software/stata.rst
+   softsection
