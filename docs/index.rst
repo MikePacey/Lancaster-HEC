@@ -14,19 +14,39 @@ so you can easily compare the two.
 Contents
 --------
 
+Overview
+
 .. toctree::
    :maxdepth: 1
 
    intro 
    howitworks
+
+HEC basics
+
+.. toctree::
+   :maxdepth: 1
+
    login
    linux
    filestore
    envmods
+
+Job submission and monitoring
+
+.. toctree::
+   :maxdepth: 1
+
    submit
    monitoring
    largemem
    jobarrays
+
+Parallel job submission
+
+.. toctree::
+   :maxdepth: 1
+
    parallel
    mpi
    openmp
