@@ -2,7 +2,6 @@ Job templates for popular applications
 ======================================
 
 .. toctree::
-   :maxdepth: 1
 
    soft
    software/compilers
