@@ -250,7 +250,7 @@ folder for a research group in the Faculty of Science and Technology:
 .. code-block:: console
 
   wayland% smbclient -D py/gondor //luna/fst
-  Enter LANCS\pacey's password: 
+  Enter LANCS\testuser's password: 
   Try "help" to get a list of possible commands.
   smb: \py\gondor\> 
 

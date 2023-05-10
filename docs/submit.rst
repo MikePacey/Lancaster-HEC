@@ -62,6 +62,10 @@ fewer jobs. Please check the login node's message of the day for any
 changes to scheduling.
 
 An example batch job script
+---------------------------
+
+The following is a simple batch job script which can be cut-and-pasted
+directly into a text editor:
 
 .. code-block:: sh
 
