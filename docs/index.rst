@@ -37,3 +37,4 @@ Contents
    software/cp2k
    software/cst
    software/gromacs
+   software/gsl
