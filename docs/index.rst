@@ -40,3 +40,4 @@ Contents
    software/gsl
    software/lammps
    software/namd
+   software/r.rst
