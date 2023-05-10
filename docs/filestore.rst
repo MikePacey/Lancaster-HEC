@@ -5,7 +5,7 @@ Overview of filestore
 ---------------------
 
 User accounts on the HEC have three high performance 
-personal filestore areas - home, storage and scratch - 
+personal filestore areas - **home**, **storage** and **scratch** - 
 which are available across the cluster. Each job also 
 has access to a unique temp directory. These areas differ 
 in size, backup policy and file retention policy.
@@ -61,16 +61,16 @@ A summary of the different filestores area is given below:
 Home, storage, scratch and temp can be quickly referenced via the environment 
 variables **HOME**, **global_storage**, **global_scratch** and **TMPDIR**
 respectively. For example, to quickly change directories to your scratch area, 
-type: *cd $global_scratch*. The variables can also be used in standard Linux 
-commands within job scripts.
+type: ``cd $global_scratch``. The variables can also be used in standard Linux 
+commands within job scripts, though not in **#SBATCH** lines.
 
 Viewing filestore quota and usage
 ---------------------------------
 
 You can view your home, storage and 
 scratch usage at any time using the command 
-**gpfsquota**, which presents output from the 
-*mmlsquota* command in a more readable format. 
+``gpfsquota``, which presents output from the 
+``mmlsquota`` command in a more readable format. 
 Typical output from gpfsquota looks like this:
 
 .. code-block:: console
@@ -113,7 +113,7 @@ Copying data from one location on the filesystem to another is
 an expensive operation - consider ways to minimise it, 
 especially when running hundreds of jobs at the same time. For 
 applications which need a local copy of an input file, consider 
-using the **ln -s** command to create a soft link (short cut) 
+using the ``ln -s`` command to create a soft link (short cut) 
 rather than a full copy of the file. If output files need to 
 be placed elsewhere on the filesystem, consider using the **mv** 
 (file move) command.
@@ -124,7 +124,7 @@ directory hierarchy can place a high load on the filesystem.
 Avoid use of recursive commands such as **find** within jobs.
 
 **Use the temp directory for temporary files.**
-The temp directory (referenced by the **$TMPDIR** variable) 
+The temp directory (referenced by the *$TMPDIR* variable) 
 is located on the compute node running your job, and offers 
 much higher file I/O and bandwidth and lower latency than 
 network based storage. Wherever possible create any 
@@ -134,7 +134,7 @@ temporary/transient files in temp.
 With the ability to run hundred of jobs simultaneously, user 
 filestore can quickly become cluttered with files (e.g. job 
 stdout and stderr files). Small files in particular have a 
-relatively high space overhead — even a small file will con
+relatively high space overhead - even a small file will con
 sume 32k of quota due to metadata and RAID overheads. An area 
 filled with large numbers of small files can exhaust quota 
 more quickly than expected.
@@ -155,7 +155,7 @@ Transferring files to the HEC from the IUS or a Linux or Mac desktop
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Files may be copied from your local machine (e.g. Linux desktop or the 
-IUS) into your HEC filestore by using the command **scp** on your 
+IUS) into your HEC filestore by using the command ``scp`` on your 
 desktop/the IUS in the format below:
  
 .. code-block:: console
@@ -174,7 +174,7 @@ this command on your local machine:
 
 This will copy *myfilename* from the HEC into *mydirectory* on your local machine.
 
-The first time you use **scp**, it may prompt you with the following:
+The first time you use ``scp``, it may prompt you with the following:
  
 .. code-block:: console
 
@@ -184,7 +184,7 @@ The first time you use **scp**, it may prompt you with the following:
 Reply with yes and you will then receive a prompt for your password. With 
 subsequent logins you will only have to give your password.
 
-To copy directories and their contents, use the **-r** option to the **scp** command:
+To copy directories and their contents, use ``scp -r``, for example :
  
 .. code-block:: console
 
@@ -193,28 +193,31 @@ To copy directories and their contents, use the **-r** option to the **scp** com
 The scp command defaults to your home directory on the HEC, so relative 
 file paths should start from there. For storage, scratch or other 
 filestore areas using the full directory path is recommended. If 
-you have difficulty determining the full path to a directory a useful 
-approach is to login to the HEC in a separate window, use the **cd** command 
-to change to the desired directory and then run the command **pwd** (print 
-working directory) which will show the full path to the directory. This 
-can then be copy-and-pasted into your desktop/IUS window containing the **scp** command.
+you have difficulty determining the full path to a directory a useful approach
+is to login to the HEC in a separate window, use the ``cd`` command 
+to change to the desired directory and then run the command ``pwd`` (print 
+working directory) which will show the full path to the directory. This can
+then be copy-and-pasted into your desktop/IUS window containing the ``scp``
+command.
 
-Note that while logged in to the HEC you can use the convenient shortcuts 
-$global_storage and $global_scratch to refer to your HEC storage and 
-scratch filestore areas, but these will only work for commands run on the HEC.
+.. note:
+  While logged in to the HEC you can use the convenient shortcuts 
+  *$global_storage* and *$global_scratch* to refer to your HEC storage and 
+  scratch filestore areas, but these will only work for commands run on the HEC.
 
 Transferring files to the HEC from a Windows PC
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Transferring files between the HEC and a local desktop PC requires your 
-PC to run a client application capable of the secure file transfer protocol. 
+PC to run a client application capable of the *secure file transfer protocol*. 
 There are several applications which support this. One such application is 
-WinSCP, which can be found on AppsAnywhere
+*WinSCP*, which can be found on `AppsAnywhere<https://apps.lancaster.ac.uk/>`_.
 
-Take care to ensure that text files such as job scripts are transferred in text 
-mode in order to avoid problems caused by format differences between Unix 
-and Windows text files. Binary files (i.e. files whose contents are not 
-solely ASCII text) should be transferred in binary mode.
+.. tip:
+  Take care to ensure that text files such as job scripts are transferred in *text 
+  mode* in order to avoid problems caused by format differences between Unix 
+  and Windows text files. Binary files (i.e. files whose contents are not 
+  solely ASCII text) should be transferred in *binary mode*.
 
 Transferring files to the HEC from luna or other smb-compliant services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -222,9 +225,9 @@ Transferring files to the HEC from luna or other smb-compliant services
 The HEC login node has a high bandwidth connection to luna, the ISS-managed 
 research data archive. While users can transfer files between folders on 
 luna and the HEC using their PC, for large file transfers using the 
-smbclient tool to connect from the HEC directly to luna is much faster.
+``smbclient`` tool to connect from the HEC directly to luna is *much* faster.
 
-To connect to a folder on luna, smbclient needs two pieces of information:
+To connect to a folder on luna, ``smbclient`` needs two pieces of information:
 
 **Faculty code**: Faculty codes are typically the faculty's acronym 
 (e.g. FST for Faculty of Science and Technology, FASS for Faculty 
@@ -240,7 +243,7 @@ The command to connect to a folder on luna is then:
 
   smbclient -D folder-path //luna/faculty-code
 
-Here's an example for accessing the py/gondor folder - a restricted-access 
+Here's an example for accessing the *py/gondor* folder - a restricted-access 
 folder for a research group in the Faculty of Science and Technology:
 
 .. code-block:: console
@@ -252,8 +255,10 @@ folder for a research group in the Faculty of Science and Technology:
 
 You will be prompted to enter your password to authenticate your acecss to the 
 requested folder. The *smb:* prompt will then allow you to use ftp-like commands 
-such as **put** and **get** to transfer files and cd to navigate between subfolders. 
-You can use the **help** command from the smb prompt to view a list of possible commands. 
+such as **put** and **get** to transfer files and **cd** to navigate between
+subfolders.  You can use the **help** command from the smb prompt to view a
+list of possible commands. 
+
 Here's an example of uploading a file to the folder:
 
 .. code-block:: console
@@ -261,28 +266,25 @@ Here's an example of uploading a file to the folder:
 
   putting file myfile as \py\gondor\myfile (529105.6 kb/s) (average 529105.6 kb/s)
 
-The transfer speed here is notably higher than transferring via file transfer on Windows, 
+The transfer speed here is notably higher than via file transfer on Windows, 
 as the data is passed directly from the HEC to the folder on luna without having to pass 
 through the user's PC first.
-
-If you are using **smbclient** several times during a session, you may find it useful 
-to use a kerberos ticket to remove the need to repeatedly enter a password for 
-authentication. 
 
 Using Kerberos tickets with smbclient
 #####################################
 
-A kerberos ticket will enable you to access the luna filestore with repeated prompts
-fr a password. Logging in to the HEC will automatically generate a kerberos ticket for 
-you which is valid for 24 hours. To use the kerberos ticket, simply add the **-k** 
+If you are using ``smbclient`` several times during a session, you may find it useful
+to use a kerberos ticket to remove the need to repeatedly enter a password for
+authentication. Logging in to the HEC will automatically generate a kerberos ticket for 
+you which is valid for 24 hours. To use the kerberos ticket, simply add the ``-k`` 
 argument to the smbclient command:
 
 .. code-block:: console
 
   smbclient -k -D folder-path //luna/faculty-code
 
-If your ticket has expired, you can generate a new one by running the **kinit** 
+If your ticket has expired, you can generate a new one by running the ``kinit`` 
 command and entering your regular password.
 
-For more advanced usage of smblcient, use the command man smbclient to view the 
+For more advanced usage of smblcient, use the command ``man smbclient`` to view the 
 command's manual page.
