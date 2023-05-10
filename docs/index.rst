@@ -8,13 +8,14 @@ is broadly similar to the current official HEC user guide
 so you can easily compare the two.
 
 .. note:: 
-   The HEC 3.0 test bed is udner development, so check
+   The HEC 3.0 test bed is under development, so check
    back regularly to see what changes have been made to best practice.
 
 Contents
 --------
 
 .. toctree::
+   :maxdepth: 1
 
    intro 
    howitworks
@@ -24,8 +25,10 @@ Contents
    envmods
 ::
 
-.. tocktree::
+.. toctree::
+   :maxdepth: 1
    :caption: Job Submission
+
    submit
    monitoring
    largemem
