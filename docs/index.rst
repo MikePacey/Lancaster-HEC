@@ -32,6 +32,8 @@ Contents
    openmp
    nodetypes
 
+Job templates for popular software
+
 .. toctree::
    :maxdepth: 1
 
