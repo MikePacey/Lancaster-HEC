@@ -14,8 +14,8 @@ so you can easily compare the two.
 Contents
 --------
 
-Overview
 .. toctree::
+   :caption: Overview of the HEC
    :maxdepth: 1
 
    intro 
