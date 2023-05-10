@@ -36,3 +36,4 @@ Contents
    software/comsol
    software/cp2k
    software/cst
+   software/gromacs
