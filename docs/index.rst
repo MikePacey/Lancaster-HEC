@@ -21,8 +21,8 @@ Contents
    intro 
    howitworks
 
-HEC basics
 .. toctree::
+   :caption: HEC Basics
    :maxdepth: 1
 
    login
@@ -30,8 +30,8 @@ HEC basics
    filestore
    envmods
 
-Job submission and monitoring
 .. toctree::
+   :caption: Job submission and monitoring
    :maxdepth: 1
 
    submit
@@ -39,8 +39,8 @@ Job submission and monitoring
    largemem
    jobarrays
 
-Parallel job submission
 .. toctree::
+   :caption: Parallel job submission
    :maxdepth: 1
 
    parallel
@@ -48,8 +48,8 @@ Parallel job submission
    openmp
    nodetypes
 
-Job templates for popular software
 .. toctree::
+   :caption: Job templates for popular software
    :maxdepth: 1
 
    soft
