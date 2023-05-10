@@ -39,3 +39,4 @@ Contents
    software/gromacs
    software/gsl
    software/lammps
+   software/namd
