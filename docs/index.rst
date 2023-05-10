@@ -35,3 +35,4 @@ Contents
    software/ansys
    software/comsol
    software/cp2k
+   software/cst
