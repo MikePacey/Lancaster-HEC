@@ -20,11 +20,7 @@ for you, and automatically avoiding many possible conflicts between packages.
 Viewing available modules
 -------------------------
 
-To view the available modules, enter the following:
-
-.. code-block:: console
-
-  module avail
+To view the available modules, use the command ``module avail``
 
 A typical output would look like this:
 
@@ -46,17 +42,7 @@ package offered. Where multiple versions or flavours of a package exist,
 the default version is indicated. The default version can be accessed 
 using just the module name, rather than the full name.
 
-A brief description of each software package can be obtained with the 
-**module whatis** command:
-
-.. code-block:: console
-
-  wayland> module whatis matlab
-  matlab : The MATLAB numerical computing environment (2010b)
-
-  homepage: http://www.mathworks.com/
-
-As the full list of modules is lengthy, you can type **module avail packagename** 
+As the full list of modules is lengthy, you can type ``module avail packagename``
 to list versions of the specified package name. For example:
 
 .. code-block:: console
@@ -66,11 +52,21 @@ to list versions of the specified package name. For example:
   --------- /usr/shared_apps/Modules/modulefiles ---------
   intel/10.1 intel/11.1 intel/12.1(default)
 
+A brief description of each software package can be obtained with the 
+``module whatis`` command:
+
+.. code-block:: console
+
+  wayland> module whatis matlab
+  matlab : The MATLAB numerical computing environment (2010b)
+
+  homepage: http://www.mathworks.com/
+
 Using modules
 -------------
 
-To setup up your job or login shell environment to access the required package, 
-use the module add command. For example:
+To setup up your job script or login shell environment to access the required package, 
+use the ``module add`` command. For example:
 
 .. code-block:: console
 
@@ -78,7 +74,7 @@ use the module add command. For example:
 
 The above command will configure your environment to use the current default 
 version of the Intel Compiler Suite tools, which in the example output from 
-**module avail** above would version 12.1. To request a specific version of a 
+``module avail`` above would version 12.1. To request a specific version of a 
 package (e.g. version 11.1), use the full module name:
 
 .. code-block:: console
@@ -167,7 +163,7 @@ Viewing module contents
 -----------------------
 
 If you want to see what environment setup a module is doing behind the scenes, 
-use the command **module show**. For example:
+use the command ``module show``. For example:
 
 .. code-block:: console
 
