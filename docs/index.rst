@@ -41,3 +41,4 @@ Contents
    software/lammps
    software/namd
    software/r.rst
+   software/stata.rst
