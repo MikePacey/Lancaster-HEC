@@ -15,7 +15,6 @@ Contents
 --------
 
 Overview
-
 .. toctree::
    :maxdepth: 1
 
@@ -23,7 +22,6 @@ Overview
    howitworks
 
 HEC basics
-
 .. toctree::
    :maxdepth: 1
 
@@ -33,7 +31,6 @@ HEC basics
    envmods
 
 Job submission and monitoring
-
 .. toctree::
    :maxdepth: 1
 
@@ -43,7 +40,6 @@ Job submission and monitoring
    jobarrays
 
 Parallel job submission
-
 .. toctree::
    :maxdepth: 1
 
@@ -53,7 +49,6 @@ Parallel job submission
    nodetypes
 
 Job templates for popular software
-
 .. toctree::
    :maxdepth: 1
 
