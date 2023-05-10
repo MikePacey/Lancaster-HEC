@@ -52,15 +52,15 @@ specific node types for jobs on the HEC.)
 Once an appropriate job slot is available, the job's status changes 
 to R (running). A job just finishing will show as state CG (completing) 
 but this state should not last for more than a few seconds. When a job 
-no longer appears on the **squeue** output, it has either finished or has 
+no longer appears on the ``squeue`` output, it has either finished or has 
 been deleted.
 
 By default, jobs will create two output files containing the output that would
-normally appear on the screen when when in non-batch mode, and corresponding
+normally appear on the screen when run in non-batch mode, and corresponding
 to the linux *stdout* and *stderr* channels. Output files names are a combination
-of the *job name*, the *job id* and the channel name. So a job named *mytest*
-submitted as job id *1234* would create output files named *mytest.1234.out* and
-*mytest.1234.err*
+of the *job name*, the *job id* and the channel name. So a job named **mytest**
+submitted as job id **1234** would create output files named **mytest.1234.out** and
+**mytest.1234.err**
 
 Job output files are created once the job starts running, though they will
 initially be empty and will slowy fill with output.
@@ -83,7 +83,7 @@ initially be empty and will slowy fill with output.
   if the job's output files exist. For very short jobs (inlcuding those 
   that stop quickly due an error) it's common for the job to transition 
   from pending to running to completed before you've had chance to view it 
-  with squeue**.
+  with ``squeue``.
 
 Viewing your job resource quota with qquota
 -------------------------------------------
@@ -157,7 +157,10 @@ The email will contain a summary of the resources used by your job:
   Memory Efficiency: 0.00% of 121.09 GB
   Email notification for job arrays
 
-When applied to job arrays, the mailback option would result in a 
+Mail notification for job arrays
+--------------------------------
+
+When applied to :doc:`job arrays</jobarrays>`, the mailback option would result in a 
 notification for every completed array element - so a 10,000 element 
 job array will result in 10,000 email notifications. To prevent 
 overloading the mail system, job arrays with the mailback option set 
