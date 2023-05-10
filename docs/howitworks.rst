@@ -5,7 +5,7 @@ The HEC has three basic components:
 
 * a login node, where users access the HEC to submit jobs;
 
-* the compute nodes, which run those jobs; and
+* the compute nodes, which run those jobs; 
 
 * dedicated file systems, which share users' files and 
   applications across the cluster.
