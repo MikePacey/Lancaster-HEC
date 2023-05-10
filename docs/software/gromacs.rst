@@ -66,7 +66,7 @@ threads per MPI process to match the number of cores per socket. As all
 HEC compute nodes are currently two-socket system the 16-core *10GethAny* 
 node_type setup is therefore 2 MPI processes per node with 8 threads per 
 process. This is achieved with the additional resource request 
-*--cpus-per-task=8* which sets OMP_NUM_THREADS to 8 and creates an mpirun 
+``--cpus-per-task=8`` which sets OMP_NUM_THREADS to 8 and creates an mpirun 
 hostfile with (16 / 8) = 2 processes per node.
 
 Further Reading
