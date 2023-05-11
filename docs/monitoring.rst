@@ -158,7 +158,7 @@ The email will contain a summary of the resources used by your job:
   Email notification for job arrays
 
 Mail notification for job arrays
---------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When applied to :doc:`job arrays</jobarrays>`, the mailback option would result in a 
 notification for every completed array element - so a 10,000 element 

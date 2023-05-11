@@ -26,15 +26,18 @@ A typical output would look like this:
 
 .. code-block:: console
 
-  --------- /usr/shared_apps/Modules/compilers ---------
-  cuda/5.0   openmpi/1.6.5-gcc   pgi/13.5
-  intel/13.0 openmpi/1.6.5-intel
+  ------------------------------ /usr/shared_apps/Nmodules/apps ------------------------------
+  abaqus/2019             dynare/4.4.3              mercurial/3.2          turbomole/6.6      
+  adf/test                e4d/Mar2017-dev           mpb/1.5-mpi            turbomole/6.6-smp  
+  amber/18                emacs/27.1                mpb/test-ser           turbomole/7.3-mpi 
+  --------------------------- /usr/shared_apps/Nmodules/compilers ----------------------------
+  gcc/4.8.1   intel/16.0     java/13.0.1             openmpi/1.10.1-intel  pgi/12.5  
+  gcc/4.9.2   intel/16.0u3   mono/4.2.2              openmpi/1.10.4-gcc    pgi/13.5 
 
-  --------- /usr/shared_apps/Modules/libraries ---------
-  fftw/3.3.3 gsl/1.16
+  --------------------------- /usr/shared_apps/Nmodules/libraries ----------------------------
+  armadillo/test          fftw/3.3.6        hdf5/1.8.13-intel       petsc/3.6.3              
+  boost/1.54.0-gcc        fftw/3.3.8        hdf5/1.10.5-ompi-intel  petsc/3.12.5  
 
-  ----------- /usr/shared_apps/Modules/apps -----------
-  R/3.0.1 matlab/2013a stata/12 valgrind/3.8.1
 
 For each available module, the name of the software package is listed first, 
 followed by an optional forward slash (/) and the version or flavour of the 
@@ -47,20 +50,25 @@ to list versions of the specified package name. For example:
 
 .. code-block:: console
 
-  wayland> module avail intel
+  --------------------------- /usr/shared_apps/Nmodules/compilers ----------------------------
+  intel/12.1  intel/15.0  intel/16.0u3  intel/18.0u5  intel/20.0u3  
+  intel/13.0  intel/16.0  intel/17.0u4  intel/19.0u5  intel/21.0u4  
 
-  --------- /usr/shared_apps/Modules/modulefiles ---------
-  intel/10.1 intel/11.1 intel/12.1(default)
+  Key:
+  default-version  modulepath 
 
 A brief description of each software package can be obtained with the 
 ``module whatis`` command:
 
 .. code-block:: console
 
-  wayland> module whatis matlab
-  matlab : The MATLAB numerical computing environment (2010b)
+  wayland-2022% module whatis intel/21.0u4 
 
-  homepage: http://www.mathworks.com/
+  --------------------------- /usr/shared_apps/Nmodules/compilers ----------------------------
+          intel/21.0u4: the intel oneapi compiler suite, 2021 version 4
+
+  homepage: https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html#base-
+kit
 
 Using modules
 -------------
@@ -79,22 +87,22 @@ package (e.g. version 11.1), use the full module name:
 
 .. code-block:: console
 
-  module add intel/11.1
+  module add intel/21.0u4
 
 To view the modules currently added to your environment, use the **module list** command:
 
 .. code-block:: console
 
-  wayland> module list
+  wayland-2022% module list
   Currently Loaded Modulefiles:
-  1) intel/11.1
+   1) intel/21.0u4 
 
 To remove modules from your environment, use the **module rm** command:
 
 .. code-block:: console
-  wayland> module rm intel
 
-  wayland> module list
+  wayland-2022% module rm intel
+  wayland-2022% module list
   No Modulefiles Currently Loaded.
 
 Module conflicts
@@ -117,14 +125,11 @@ libraries available in your environment at any one time:
 
 .. code-block:: console
 
-  wayland> module add intel
-  wayland> module add pgi
-  pgi/11.5(15):ERROR:150: Module 'pgi/11.5' conflicts with the currently loaded module(s) 'intel/12.1'
-  pgi/11.5(15):ERROR:102: Tcl command execution failed: conflict pgi intel
-
-The first error line shows exactly which two modules generate the conflict. 
-The second error message shows the general rule that triggered the warning 
-message.
+  wayland-2022% module add intel
+  wayland-2022% module add pgi
+  Loading pgi/19.4
+    ERROR: Module cannot be loaded due to a conflict.
+      HINT: Might try "module unload intel/20.0u3" first.
 
 To resolve a conflict simply remove the currently loaded conflicting module 
 before adding the new one.
@@ -147,17 +152,17 @@ simply use module switch instead:
 
 .. code-block:: console
 
-  % module add pgi/6.2-64-bit
+  wayland-2022% module add intel/21.0u4
 
-  % module list
+  wayland-2022% module list
   Currently Loaded Modulefiles:
-  1) pgi/6.2-64-bit
+   1) intel/21.0u4  
 
-  % module switch pgi/6.2-32-bit
+  wayland-2022% module switch intel/19.0u5
 
-  % module list
+  wayland-2022% module list
   Currently Loaded Modulefiles:
-  1) pgi/6.2-32-bit
+   1) intel/19.0u5 
 
 Viewing module contents
 -----------------------
@@ -167,14 +172,16 @@ use the command ``module show``. For example:
 
 .. code-block:: console
 
-  > module show R/2.11.1
-  -----------------------------------------------
-  /usr/shared_apps/Modules/modulefiles/R/2.11.1:
+  wayland-2022% module show ImageMagick/7.0.9
+  -------------------------------------------------------------------
+  /usr/shared_apps/Nmodules/apps/ImageMagick/7.0.9:
 
-  module-whatis the R stats package version 2.11.1
+  module-whatis   {The ImageMagick image editting package
 
-  homepage: http://cran.r-project.org/
-  conflict R
-  prepend-path PATH /usr/shared_apps/packages/R-2.11.1/bin
-  prepend-path LD_LIBRARY_PATH /usr/shared_apps/packages/R-2.11.1/lib64/R/lib
+  homepage: https://imagemagick.org//}
+  setenv          IM_HOME /usr/shared_apps/packages/ImageMagick-7.0.9-14
+  prepend-path    PATH /usr/shared_apps/packages/ImageMagick-7.0.9-14/bin
+  prepend-path    MANPATH /usr/shared_apps/packages/ImageMagick-7.0.9-14/share/man
+  prepend-path    LD_LIRBARY_PATH /usr/shared_apps/packages/ImageMagick-7.0.9-14/lib
+  -------------------------------------------------------------------
 
