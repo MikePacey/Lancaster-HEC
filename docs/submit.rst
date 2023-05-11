@@ -141,7 +141,7 @@ scripts for popular packages.
 .. tip::
 
    The HEC login node offers a range of different text editors which can be used
-   to write jobs scripts. Available text editors include ``nano`` (a simple editor),
+   to write job scripts. Available text editors include ``nano`` (a simple editor),
    ``vim`` and ``emacs`` (both feature-rich editors with broad user bases). Writing
    job scripts directly on the HEC is often much more convenient than writing them on
    your desktop and transferring the files across.

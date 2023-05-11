@@ -30,6 +30,7 @@ A typical output would look like this:
   abaqus/2019             dynare/4.4.3              mercurial/3.2          turbomole/6.6      
   adf/test                e4d/Mar2017-dev           mpb/1.5-mpi            turbomole/6.6-smp  
   amber/18                emacs/27.1                mpb/test-ser           turbomole/7.3-mpi 
+
   --------------------------- /usr/shared_apps/Nmodules/compilers ----------------------------
   gcc/4.8.1   intel/16.0     java/13.0.1             openmpi/1.10.1-intel  pgi/12.5  
   gcc/4.9.2   intel/16.0u3   mono/4.2.2              openmpi/1.10.4-gcc    pgi/13.5 

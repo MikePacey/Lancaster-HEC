@@ -60,7 +60,7 @@ For serial jobs:
 
 * If no node_type is specified, the job is free to launch on any type of compute node. The node_type should typically not be used for serial jobs.
 
-* For parallel jobs making an exclusive resource request (ie, requesting one or more whole compute nodes):
+For parallel jobs making an exclusive resource request (ie, requesting one or more whole compute nodes):
 
 * If no node_type is specified, the job will be run as though **node_type=10Geth64G** had been specified.
 
