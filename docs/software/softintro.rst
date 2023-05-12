@@ -6,5 +6,5 @@ in particular applications which have non-standard invocation.
 
 Most application will work with the standard job templates for
 as described in earlier sections, including :doc:`serial</submit>`
-:doc:`MPI parallel</software/mpi>` and :doc:`OpenMP parallel<software/mpi`
+:doc:`MPI parallel</software/mpi>` and :doc:`OpenMP parallel<software/mpi>`
 
