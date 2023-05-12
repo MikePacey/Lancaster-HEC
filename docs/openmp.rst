@@ -26,18 +26,18 @@ A detailed explanation of the OpenMP compiler directives can found in the
 guides for both the PGI and Intel compiler suites (see helpful links under 
 the Additional advice section for more information).
 
-* To compile OpenMP code using the Intel compiler, compile with your normal set of Intel compiler flags, and add the **-openmp** argument.
+* To compile OpenMP code using the Intel compiler, compile with your normal set of Intel compiler flags, and add the ``-openmp`` argument.
 
-* To compile OpenMP code using the PGI compiler, compile with your normal set of PGI compiler flags, and add the compiler argument **-mp**
+* To compile OpenMP code using the PGI compiler, compile with your normal set of PGI compiler flags, and add the compiler argument ``-mp``
 
-* To compile OpenMP code using the GNU compilers, compile with your normal set of GNU compiler flags and add the compiler argment **-fopenmp**
+* To compile OpenMP code using the GNU compilers, compile with your normal set of GNU compiler flags and add the compiler argment ``-fopenmp``
 
 Make sure that the correct module for your preferred compiler suite has already been added to your environment.
 
 Submitting OpenMP jobs
 ----------------------
 
-The following job template will run an 8-core version of a program names
+The following job template will run an 8-core version of a program named
 **omptest** compiled with an Intel compiler:
 
 .. code-block:: bash
@@ -54,7 +54,7 @@ The following job template will run an 8-core version of a program names
   ./omptest
   
 The number of cores/threads required is specified in the 
---cpus-per-task option in the job script. 
+``--cpus-per-task`` option in the job script. 
 
 Note that a *memory 
 resource request* is required for OpenMP jobs - as the job is 
@@ -62,10 +62,10 @@ unlikely to use all cores on a single compute node, the job
 scheduler needs to know what memory to reserve for this job to 
 enable it to schedule other jobs with their own memory resource 
 requests on the same node. If no memory resource request is 
-specified, the default value of 500M is applied ot the job.
+specified, the default value of 500M is applied to the job.
 
 OpenMP applications automatically set their number of threads 
 based upon the value of the environment variable *OMP_NUM_THREADS*. 
 For OpenMP jobs using the template above, the scheduler will 
 automatically set this environment variable to match the CPUs requested 
-in the --cpus-per-task option in the job script.
+in the ``--cpus-per-task`` option in the job script.

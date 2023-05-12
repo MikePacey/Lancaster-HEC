@@ -53,6 +53,7 @@ Contents
    :caption: Job templates for popular software
    :maxdepth: 1
 
+   software/softintro
    software/compilers
    software/ansys
    software/comsol
