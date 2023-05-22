@@ -32,15 +32,10 @@ Where *type* is one of the following:
     - Intel Ivy Bridge, Haswell or Broadwell
     - 64G
     - 10Gb low latency
-  * - 10Geth128G
-    - 16
-    - Intel Ivy Bridge
-    - 128G
-    - 10Gb low latency
   * - 10GethAny
     - 16
     - Intel Ivy Bridge, Haswell or Broadwell
-    - 64G or 128G
+    - 64G
     - 10Gb low latency
   * - 40core192G
     - 40
@@ -53,6 +48,11 @@ Where *type* is one of the following:
     - 256G
     - 25Gb low latency
 
+.. note::
+
+  The 10GethAny nodetype exists only to provide backwards compatibilty - it
+  used to refer to both the existing 10Geth64G and the now retired 10Geth128G nodes.
+
 The scheduler will handle *node_type* requests in an intelligent way, 
 depending on job type:
 
@@ -64,7 +64,7 @@ For parallel jobs making an exclusive resource request (ie, requesting one or mo
 
 * If no node_type is specified, the job will be run as though **node_type=10Geth64G** had been specified.
 
-* If **node_type=10GethAny** is specified, the job will be eligible to run on compute nodes of type **10eth64G** or **10Geth128G**, and the memory resource request will be set to 3.95G per core (for a total of 63.2G per node).
+* If **node_type=10GethAny** is specified, and the memory resource request will be set to 3.95G per core (for a total of 63.2G per node).
 
 * If **node_type=40core192G** is specified, the job will be eligible to run on compute nodes of type 40core192G with a memory resource request of 4.75G per core (for a total of 190G per node).
 

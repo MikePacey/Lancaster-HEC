@@ -135,8 +135,8 @@ from the specified shell. The example command above is:
   echo Job running on compute node `uname -n`
 
 which simply prints a short message to say which compute node the job was 
-run on. See the Software section of this guide for templates of job 
-scripts for popular packages.
+run on. See the :doc:`Software</software/softintro>` section of this guide for
+templates of job scripts for popular packages.
 
 .. tip::
 
