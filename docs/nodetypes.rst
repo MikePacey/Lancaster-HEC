@@ -50,7 +50,7 @@ Where *type* is one of the following:
 
 .. note::
 
-  The 10GethAny nodetype exists only to provide backwards compatibilty - it
+  The 10GethAny node type exists only to provide backwards compatibilty - it
   used to refer to both the existing 10Geth64G and the now retired 10Geth128G nodes.
 
 The scheduler will handle *node_type* requests in an intelligent way, 
@@ -68,8 +68,8 @@ For parallel jobs making an exclusive resource request (ie, requesting one or mo
 
 * If **node_type=40core192G** is specified, the job will be eligible to run on compute nodes of type 40core192G with a memory resource request of 4.75G per core (for a total of 190G per node).
 
-* If note_type=64core256G is specified, the job will be eligible to run on compute nodes of type 64core256G with a memory resource request of 3.95G per core (for a total of 252.8G per node).
+* If **node_type=64core256G** is specified, the job will be eligible to run on compute nodes of type 64core256G with a memory resource request of 3.95G per core (for a total of 252.8G per node).
 
 For parallel jobs that do not make an exclusive request (ie, OpenMP jobs requesting a number of cores all on the same compute node):
 
-* If no node_type is specified the job will be eligible to run on any node that offers at least as many cores as requested.
+* If no node_type is specified the job will be eligible to run on any node that can suport the number of cores and amount of memory requested

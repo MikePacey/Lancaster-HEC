@@ -8,7 +8,9 @@ is broadly similar to the current official HEC user guide
 so you can easily compare the two.
 
 .. toctree::
-   testbed
+  :maxdepth: 1
+
+  testbed
 
 .. note:: 
    The HEC 3.0 test bed is under development, so check
