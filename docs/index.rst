@@ -53,6 +53,7 @@ Contents
    mpi
    openmp
    nodetypes
+   gpus
 
 .. toctree::
    :caption: Job templates for popular software
