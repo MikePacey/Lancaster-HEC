@@ -30,11 +30,11 @@ The following job will run the CUDA nbody demo application as a benchmark on two
 
   Not all applications will automatically detect how many GPUs should used.
   Specifying whether to use GPUs, and how may to use, varies widely
-  bewteen applications. In the above example the command line argument "-numdevices="
-  needs to be added to the nbody demo application. Refer to your application's User 
+  bewteen applications. In the above example the command line argument *-numdevices=*
+  needs to be added to the **nbody** demo application. Refer to your application's User 
   Guide for details on the correct syntax to use.
 
-The main differences between GPU-based jobs are: 
+The main differences with GPU-based jobs are: 
 
 * the use of a special queues (**gpu-short** in the above example)
 * the use of a resource request for GPUs using the **--gres=gpus:** syntax
@@ -42,15 +42,15 @@ The main differences between GPU-based jobs are:
 
 As GPU jobs will also require a certain amount of CPU resource and the compute node's main memory,
 these values also need to specified in a job request. Be aware that the compute node's main memory
-is separate to the GPU's own memory - while the former needs to be requested in the job, each
-requested GPU is available only to the job that requested it. As each job gains access to the whole
-of each requested GPU's memory, there's no need to specify resource request for GPU memory in the job. 
+is separate to the GPU's own memory and so needs to be requested in each job. Jobs don't
+need to request GPU memory - as each job requests dedicated GPUs, the whole of each requested
+GPU's memory is made available to the job automatically.
 
 .. note::
 
   Take care when requesting CPU and (main) memory resource in GPU jobs, as claiming too much of either
   will result in little (or no) resource for other GPU jobs on the same node. If a job's performance
-  is significantly increased by large amount of CPU resource, it's likely that the application is not
+  is significantly increased by large amounts of CPU resource, it's likely that the application is not
   making good use of the GPU and would best run as a CPU-only job.
 
 Multi-node GPU jobs
@@ -72,8 +72,8 @@ The following example requests all (3) GPUs on 2 nodes:
   # Job command here
 
 Note that such jobs will need some mechanism to launch across multiple nodes, such as MPI's
-mpirun. Refer to the user guide for your application to if and how multi-node / distributed
-compuitng GPUs are supported.
+*mpirun*. Refer to the user guide for your application to learn if and how multi-node / distributed
+computing GPUs workloads are supported.
 
 
 
@@ -81,8 +81,8 @@ GPU Queues
 ----------
 
 While most GPU jobs will be short, the HEC GPU nodes offer support for a small number 
-of longer-running jobs. There are three different queues for GPU jobs: gpu-short, gpu-medium and 
-gpu-long, with different limitations:
+of longer-running jobs. There are three different queues for GPU jobs: **gpu-short**, 
+**gpu-medium** and **gpu-long**, with different limitations:
 
 .. list-table::
   :header-rows: 1
@@ -114,10 +114,10 @@ GPU resource monitoring
 
 GPU jobs on the HEC are logged using NVidia's Data Centre GPU Manager
 suite, which summarises how much GPU resource is used by each job on
-a per-GPU level. The data is intended to intended to highlight cases
+a per-GPU level. The logging is intended to highlight cases
 where jobs make very little - or no - use of GPU resource, which indicates
 that they would be better run as CPU-only jobs. The usage data is appended
-to the end of each jobs's *stdout* file. An example for the above job would 
+to the end of each jobs's *stdout* file. An example for the **nbody** above job would 
 be:
 
 .. code-block:: bash
@@ -162,13 +162,13 @@ be:
   +------------------------------------+-----------------------------------------+
 
 The most relevant entry is the "SM Utilization (%)" line, which shows the average,
-minimun and maximum utilisation of GPU cores. The line above that "Max GPU Memory 
+minimum and maximum utilisation of GPU cores. The line above that labled "Max GPU Memory 
 Used (bytes)" reports the maximum amount of GPU memory (not to confused the the compute
 node's main memory) used by the job.
 
 Each jobs' GPU utilisation can also be monitored while running using the **qgputop** 
 command. The command accepts two flags either "-u username" for all jobs run by the
-names user of "-j jobid" to query a specific job.
+named user, or "-j jobid" to query a specific job.
 
 .. code-block:: bash
 
@@ -194,8 +194,8 @@ names user of "-j jobid" to query a specific job.
   |    0   N/A  N/A   1230218      C   nbody                            1004MiB |
   +-----------------------------------------------------------------------------+
 
-The above example shows output from a job running the CUA nbody demo. The first box
-in the output shows GPU utilisation in the filed "GPU-Util" (the 100% value in the
+The above example shows output from a job running the CUDA **nbody** demo. The first box
+in the output shows GPU utilisation in the field "GPU-Util" (the 100% value in the
 output). The second box shows what processes are currently attached to a GPU and
 how much GPU memory they are consuming.
 

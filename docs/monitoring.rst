@@ -212,6 +212,104 @@ The output shows the CPU and memory utilisation of each job on each node.
 The CPU usage reported in this example is close to 1600%, which is the 
 expected value for parallel jobs fully utilising all CPUs on a 16-core compute node.
 
+Monitoring jobs with qtop
+-------------------------
+
+While the **qcgtop** tool described above provides an overall summary of
+each jobs' CPu and memory usage, it doesn't provide a breakdown of
+the individual processes within a job. The **qtop** tool can be used
+to view the individual processes of jobs - along with their memory and
+CPU utilisation. The drawback with **qtop** is that it isn't job-aware and
+will simply display each process being run on each compute node.
+
+As an example of its usage, consider the following job list for user
+*testuser* running the command **squeue --me** to view their jobs:
+
+.. code-block:: console
+
+             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+              2286 serial    nbody2.s testuser  R       0:01      1 comp01-02
+              2285 serial    nbody.sb testuser  R       0:16      1 comp01-01
+              2284 serial    nbody.sb testuser  R       3:43      1 comp01-01
+
+The output shows that *testuser* has three jobs running across two compute nodes:
+*comp01-01* and *comp01-02*. The result of running **qtop -u testuser** looks like
+this:
+
+.. code-block:: console
+
+  Host: comp01-01
+      PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+
+  1235678 testuser  20   0 7077748   1.2g 131936 R 100.0   0.6   3:46.31 nbody
+  1235915 testuser  20   0 7077748   1.2g 132180 R 100.0   0.6   0:19.46 nbody
+  1235961 testuser  20   0   50120   4508   3600 R   1.0   0.0   0:00.01 top
+  1235622 testuser  20   0   15268   3608   3156 S   0.0   0.0   0:00.00 slurm_s+
+  1235859 testuser  20   0   15268   3608   3156 S   0.0   0.0   0:00.00 slurm_s+
+  1235960 testuser  20   0  141276   5404   3912 S   0.0   0.0   0:00.00 sshd
+  Host: comp01-02
+      PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
+  1229929 testuser  20   0   10.8g   1.5g 954020 R  99.0   0.8   0:05.46 nbody
+  1229873 testuser  20   0   15268   3596   3140 S   0.0   0.0   0:00.00 slurm_s+
+  1229944 testuser  20   0  141276   5524   4032 S   0.0   0.0   0:00.00 sshd
+  1229945 testuser  20   0   50120   4476   3560 R   0.0   0.0   0:00.01 top
+
+The output fields for processes are identical to those for the
+standard linux top command executed in batch mode - see the man page
+for an in-depth description of the meaning of each field. This
+description will cover only the more relevant fields. Sets of
+processes are grouped so that all of a user's processes on a compute
+node appear together.
+
+The first thing to note is that the information provided by **qtop** is
+very different from that of **squeue**. **qtop** is not an integrated part of
+SLURM so it will output process information from each compute
+node with a running job, rather than job information - a single job will involve executing a
+number of processes on a compute node. You'll need to compare **qtop** and
+**squeue** output to work out just what's going on. For example, **qtop**
+doesn't give you the job-ID number, and it often lists two or more
+processes where **squeue** or **qcgtop** lists just one job.
+
+The three most relevant fields in the output are labelled **COMMAND**,
+**RES** and **CPU**.
+
+The **COMMAND** field shows the name of the command being run by the
+process. Because jobs are submitted to the cluster as a job script the
+job script itself becomes a process, which is named slurm_script, shortened
+to **slurm_s+** in the above output.  The job shell
+typically consumes very little CPU - it's simply setting up the job's
+working environment and then calling the applications requested in the
+job submission script. 
+
+As the **qtop** command runs the standard Linux
+**top** command on each compute node, this will also appear in the, along
+with the ssh process (labelled **sshd**) which enables the remote command.
+
+For most purposes, you'll be interested in the
+remaining process(es) listed - typically the main process that your job
+script is currently running. In the above example the remaining processes are
+all **nbody** - one of the applications available on the HEC.
+
+The **RES** field gives the total *resident memory*
+size of each process.  Smaller process sizes are listed in (k)ilobytes,
+larger ones in (m)egabytes, or even (g)igabytes. 
+
+The other useful field in the qtop output is **CPU**, which describes how
+much of a single CPU the process is consuming. Typically a running
+serial job should be consuming very close to 100% of a CPU's
+resources. In contrast, an MPI parallel job will show multiple processes, each consuming
+around 100% CPU. OpenMP and other multi-threaded processes will show a
+single process entry consuming several hundred percent CPU - ideally
+100 x the number of cores being used. Values considerably lower than
+these ideals will likely indicate some problem; the process might be
+spending a disproportionate amount of time performing file reads or
+writes; or in the case of badly balanced parallel programs one process
+might be idle while waiting for a communication from another process.
+
+Note that the **PID** field gives the Linux process ID, not the SLURM Job ID. Each
+process on a Linux system is assigned a unique process ID, which forms
+part of the standard output for top.
+
 Reviewing logs of completed jobs
 --------------------------------
 
