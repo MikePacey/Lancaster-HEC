@@ -73,7 +73,7 @@ The following example requests all (3) GPUs on 2 nodes:
   # Job command here
 
 Note that such jobs will need some mechanism to launch across multiple nodes, such as MPI's
-*mpirun*. Refer to the user guide for your application to learn if and how multi-node / distributed
+``mpirun``. Refer to the user guide for your application to learn if and how multi-node / distributed
 computing GPU workloads are supported.
 
 
