@@ -214,7 +214,7 @@ compiler for compiling GPU-capable code written in C or C++.
 After adding the cuda environment, the compiler can invoked using arguments common to most compilers.
 
 For instance, in the Vector Addition example from this `Oak Ridge Leadership Computing Facility 
-tutorial<https://www.olcf.ornl.gov/tutorials/cuda-vector-addition/>`_, the source file vecAdd.cu 
+tutorial <https://www.olcf.ornl.gov/tutorials/cuda-vector-addition/>`_ the source file vecAdd.cu 
 can be compiled into an executable named vector_add with the command:
 
 ``nvcc vecAdd.cu -o vector_add``
