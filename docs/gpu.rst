@@ -238,15 +238,15 @@ GPU-capable job script:
 
 Further Reading:
 
-* The `CUDA main page<https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html>`_
+* The `CUDA main page <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html>`_
 
-* NVidia's `documentation for the nvcc compiler<https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html>`_
+* NVidia's `documentation for the nvcc compiler <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html>`_
 
 GPU-enabled Machine Learning Libraries
 --------------------------------------
 
 For GPU-enabled versions of several Python libraries including Tensorflow,
-keras and Torch, :doc:`/software/opence`
+keras and Torch, see :doc:`/software/opence`
 
 GPU Hardware Contributions
 --------------------------
