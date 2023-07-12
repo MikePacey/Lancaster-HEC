@@ -29,7 +29,7 @@ The following job will run the CUDA nbody demo application as a benchmark on two
 
 .. note::
 
-  Not all applications will automatically detect how many GPUs should used.
+  Not all applications will automatically detect how many GPUs should be used.
   Specifying whether to use GPUs, and how may to use, varies widely
   bewteen applications. In the above example the command line argument *-numdevices=*
   needs to be added to the **nbody** demo application. Refer to your application's User 
@@ -57,7 +57,7 @@ GPU's memory is made available to the job automatically.
 Multi-node GPU jobs
 -------------------
 
-Jobs which scale well to large number of GPUs can request multiple GPU nodes for each job.
+Jobs which scale well to large numbers of GPUs can request multiple GPU nodes for each job.
 The following example requests all (3) GPUs on 2 nodes:
 
 .. code-block:: bash
@@ -74,7 +74,7 @@ The following example requests all (3) GPUs on 2 nodes:
 
 Note that such jobs will need some mechanism to launch across multiple nodes, such as MPI's
 *mpirun*. Refer to the user guide for your application to learn if and how multi-node / distributed
-computing GPUs workloads are supported.
+computing GPU workloads are supported.
 
 
 
@@ -163,13 +163,13 @@ be:
   +------------------------------------+-----------------------------------------+
 
 The most relevant entry is the "SM Utilization (%)" line, which shows the average,
-minimum and maximum utilisation of GPU cores. The line above that labled "Max GPU Memory 
-Used (bytes)" reports the maximum amount of GPU memory (not to confused the the compute
+minimum and maximum utilisation of GPU cores. The line above that labelled "Max GPU Memory 
+Used (bytes)" reports the maximum amount of GPU memory (not to be confused the the compute
 node's main memory) used by the job.
 
 Each jobs' GPU utilisation can also be monitored while running using the **qgputop** 
-command. The command accepts two flags either "-u username" for all jobs run by the
-named user, or "-j jobid" to query a specific job.
+command. The command accepts two flags - either ``-u username`` for all jobs run by the
+named user, or ``-j jobid`` to query a specific job.
 
 .. code-block:: bash
 
@@ -202,7 +202,7 @@ how much GPU memory they are consuming.
 
 .. note::
 
-  CPU and main system memory usage for GPU jobs can be monitored using the **qtop** 
+  CPU and main system memory usage for GPU jobs can be monitored using the ``qtop`` 
   command in the same manner as CPU-only jobs
 
 Compiling CUDA-capable code
@@ -214,7 +214,7 @@ compiler for compiling GPU-capable code written in C or C++.
 After adding the cuda environment, the compiler can invoked using arguments common to most compilers.
 
 For instance, in the Vector Addition example from this `Oak Ridge Leadership Computing Facility 
-tutorial<https://www.olcf.ornl.gov/tutorials/cuda-vector-addition/>_`, the source file vecAdd.cu 
+tutorial<https://www.olcf.ornl.gov/tutorials/cuda-vector-addition/>`_, the source file vecAdd.cu 
 can be compiled into an executable named vector_add with the command:
 
 ``nvcc vecAdd.cu -o vector_add``
@@ -238,9 +238,9 @@ GPU-capable job script:
 
 Further Reading:
 
-* The `CUDA main page<https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html>_`
+* The `CUDA main page<https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html>`_
 
-* NVidia's `documentation for the nvcc compiler<https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html>_`
+* NVidia's `documentation for the nvcc compiler<https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html>`_
 
 GPU-enabled Machine Learning Libraries
 --------------------------------------
