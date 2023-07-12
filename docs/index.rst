@@ -69,6 +69,7 @@ Contents
    software/gsl
    software/lammps
    software/namd
+   software/opence
    software/r.rst
    software/stata.rst
 
