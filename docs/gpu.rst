@@ -1,5 +1,5 @@
-GPU Jobs on the HEC
-===================
+GPU Jobs
+========
 
 GPUs (Graphics Processing Units) are a specialist type of computing hardware originally designed for displaying high performance graphics and now increasingly used to perform specialist computing tasks in the domain of research computing. The HEC offers a small number of GPU compute nodes contributed by University research groups. This page describes how to submit jobs running GPU-capable software on the HEC.
 
@@ -19,6 +19,7 @@ The following job will run the CUDA nbody demo application as a benchmark on two
   #SBATCH -p gpu-short
   #SBATCH --gres=gpu:1
   #SBATCH --mem=10G
+  #SBATCH --time=00:10:00
   #SBATCH --cpus-per-task=1
 
   source /etc/profile
@@ -203,3 +204,79 @@ how much GPU memory they are consuming.
 
   CPU and main system memory usage for GPU jobs can be monitored using the **qtop** 
   command in the same manner as CPU-only jobs
+
+Compiling CUDA-capable code
+---------------------------
+
+NVidia's CUDA library (available on the HEC as the cuda module) provides the ``nvcc`` 
+compiler for compiling GPU-capable code written in C or C++.
+
+After adding the cuda environment, the compiler can invoked using arguments common to most compilers.
+
+For instance, in the Vector Addition example from this `Oak Ridge Leadership Computing Facility 
+tutorial<https://www.olcf.ornl.gov/tutorials/cuda-vector-addition/>_`, the source file vecAdd.cu 
+can be compiled into an executable named vector_add with the command:
+
+``nvcc vecAdd.cu -o vector_add``
+
+To run this application, the call to vector_add can be included within a standard 
+GPU-capable job script:
+
+.. code-block:: bash
+
+  #!/bin/bash
+  #SBATCH -p gpu-short
+  #SBATCH --gres=gpu:1
+  #SBATCH --mem=1G
+  #SBATCH --time=00:10:00
+  #SBATCH --cpus-per-task=1
+
+  source /etc/profile
+  module add cuda
+
+  ./vector_add
+
+Further Reading:
+
+* The `CUDA main page<https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html>_`
+
+* NVidia's `documentation for the nvcc compiler<https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html>_`
+
+GPU-enabled Machine Learning Libraries
+--------------------------------------
+
+For GPU-enabled versions of several Python libraries including Tensorflow,
+keras and Torch, :doc:`/software/opence`
+
+GPU Hardware Contributions
+--------------------------
+
+The HEC currently offers the following GPU nodes:
+
+.. list-table::
+  :header-rows: 1
+
+  * - GPU type
+    - # GPUs
+    - # CPU Cores
+    - Main memory
+    - # GPU nodes
+    - Contributor
+  * - NVidia V100 32GB
+    - 3
+    - 32
+    - 192G
+    - 1
+    - HEP Research Group
+  * - NVidia V100 32GB
+    - 3
+    - 32
+    - 192G
+    - 1
+    - CHICAS Research Group
+  * - NVidia V100 32GB	
+    - 3
+    - 32
+    - 192G
+    - 6
+    - Maths and Stats Dept

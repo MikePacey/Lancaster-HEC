@@ -1,10 +1,10 @@
-Requesting specific node types on the HEC
-=========================================
+Requesting specific node types
+==============================
 
-While the HEC's compute nodes are all broadly similar in 
+While the HEC's compute nodes are all similar in 
 their underlying architecture, different eras of compute 
 nodes are of very different sizes. For the purposes of 
-parallel jobs which request a whole node or multiple nodes, 
+parallel jobs which request multiple nodes, 
 it's important to ensure that each node used is of broadly 
 the same type. There may also be some circumstances where 
 a particular application may perform better on one type of 

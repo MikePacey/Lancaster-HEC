@@ -215,15 +215,15 @@ expected value for parallel jobs fully utilising all CPUs on a 16-core compute n
 Monitoring jobs with qtop
 -------------------------
 
-While the **qcgtop** tool described above provides an overall summary of
-each jobs' CPu and memory usage, it doesn't provide a breakdown of
-the individual processes within a job. The **qtop** tool can be used
+While the ``qcgtop`` tool described above provides an overall summary of
+each jobs' CPU and memory usage, it doesn't provide a breakdown of
+the individual processes within a job. The ``qtop`` tool can be used
 to view the individual processes of jobs - along with their memory and
-CPU utilisation. The drawback with **qtop** is that it isn't job-aware and
+CPU utilisation. The drawback with ``qtop`` is that it isn't job-aware and
 will simply display each process being run on each compute node.
 
 As an example of its usage, consider the following job list for user
-*testuser* running the command **squeue --me** to view their jobs:
+*testuser* running the command ``squeue --me`` to view their jobs:
 
 .. code-block:: console
 
@@ -233,14 +233,13 @@ As an example of its usage, consider the following job list for user
               2284 serial    nbody.sb testuser  R       3:43      1 comp01-01
 
 The output shows that *testuser* has three jobs running across two compute nodes:
-*comp01-01* and *comp01-02*. The result of running **qtop -u testuser** looks like
+*comp01-01* and *comp01-02*. The result of running ``qtop -u testuser`` looks like
 this:
 
 .. code-block:: console
 
   Host: comp01-01
       PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND
-
   1235678 testuser  20   0 7077748   1.2g 131936 R 100.0   0.6   3:46.31 nbody
   1235915 testuser  20   0 7077748   1.2g 132180 R 100.0   0.6   0:19.46 nbody
   1235961 testuser  20   0   50120   4508   3600 R   1.0   0.0   0:00.01 top
@@ -255,40 +254,41 @@ this:
   1229945 testuser  20   0   50120   4476   3560 R   0.0   0.0   0:00.01 top
 
 The output fields for processes are identical to those for the
-standard linux top command executed in batch mode - see the man page
+standard linux ``top`` command executed in batch mode - see the man page
 for an in-depth description of the meaning of each field. This
 description will cover only the more relevant fields. Sets of
 processes are grouped so that all of a user's processes on a compute
 node appear together.
 
-The first thing to note is that the information provided by **qtop** is
-very different from that of **squeue**. **qtop** is not an integrated part of
+The first thing to note is that the information provided by ``qtop`` is
+very different from that of ``squeue``. ``qtop`` is not an integrated part of
 SLURM so it will output process information from each compute
 node with a running job, rather than job information - a single job will involve executing a
-number of processes on a compute node. You'll need to compare **qtop** and
-**squeue** output to work out just what's going on. For example, **qtop**
+number of processes on a compute node. You'll need to compare ``qtop`` and
+``squeue`` output to work out just what's going on. For example, ``qtop``
 doesn't give you the job-ID number, and it often lists two or more
-processes where **squeue** or **qcgtop** lists just one job.
+processes where ``squeue`` or ``qcgtop`` lists just one job.
 
 The three most relevant fields in the output are labelled **COMMAND**,
 **RES** and **CPU**.
 
 The **COMMAND** field shows the name of the command being run by the
-process. Because jobs are submitted to the cluster as a job script the
+process. Because jobs are submitted to the cluster as a job the
 job script itself becomes a process, which is named slurm_script, shortened
-to **slurm_s+** in the above output.  The job shell
+to **slurm_s+** in the above output.  The **slurm_script** 
 typically consumes very little CPU - it's simply setting up the job's
 working environment and then calling the applications requested in the
 job submission script. 
 
-As the **qtop** command runs the standard Linux
-**top** command on each compute node, this will also appear in the, along
-with the ssh process (labelled **sshd**) which enables the remote command.
+As the ``qtop`` command runs the standard Linux
+``top`` command on each compute node, this command will also appear in the list along
+with an ssh process (labelled **sshd**) which enables the remote command.
 
 For most purposes, you'll be interested in the
 remaining process(es) listed - typically the main process that your job
 script is currently running. In the above example the remaining processes are
-all **nbody** - one of the applications available on the HEC.
+all called **nbody** - one of the applications available on the HEC
+and the main command in submitted job scripts.
 
 The **RES** field gives the total *resident memory*
 size of each process.  Smaller process sizes are listed in (k)ilobytes,
