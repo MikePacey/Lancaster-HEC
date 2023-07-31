@@ -29,7 +29,7 @@ version of MPI libraries and include files. The compiler wrappers are:
   * - mpif90
     - Fortran 90
 
-These wrappers can be called once the relevant module has been 
+These wrappers can be called once the relevant :ref:`enviroment module<envmods>` has been 
 added to your environment and are used in exactly the same way 
 that a standard compiler can be called.
 
@@ -107,7 +107,7 @@ This line specifies which *type* of compute node the job is requesting.
 Different nodes have different architectures, numbers of cores and amounts 
 of memory; to ensure optimum placement all nodes used in the same parallel 
 job must be of the same type. The different types of node are described 
-in full in Requesting specific node types.
+in full in :ref:`Requesting specific node types<nodetypes>`.
 
 In this example, the node type is *10Geth64G*, which has 16 cores, 64G of 
 memory and 10G ethernet network connection.

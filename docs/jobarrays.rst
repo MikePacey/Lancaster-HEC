@@ -28,7 +28,7 @@ job script, as in the following example:
 
 This splits the workload into a number of *tasks*, with each task 
 being a separate job and having its own unique *task id number*. 
-This task id number can then be used withib the job script to perform 
+This task id number can then be used within the job script to perform 
 slightly different actions each time, e.g. reading from a different 
 input file (as in the above example), or passing a different set of 
 parameters to your program for each task.
@@ -91,7 +91,7 @@ If you want to stop all the tasks of a job at once, you can use the normal scanc
 
   scancel 1188
 
-If you want to stop individual jobs, you can suffix the job id with the individual 
+If you want to stop individual tasks, you can suffix the job id with the individual 
 task id. To stop just task ID 4 of job ID 1188 above, we do:
 
 .. code-block:: console
