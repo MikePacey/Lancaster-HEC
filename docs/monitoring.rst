@@ -155,9 +155,8 @@ The email will contain a summary of the resources used by your job:
   Job Wall-clock time: 00:00:29
   Memory Utilized: 3.54 MB
   Memory Efficiency: 0.00% of 121.09 GB
-  Email notification for job arrays
 
-Mail notification for job arrays
+Email notification for job arrays
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When applied to :doc:`job arrays</jobarrays>`, the mailback option would result in a 
@@ -328,6 +327,7 @@ benchmark for the Yank free energy calculation framework the
 command ``seff 1168`` produces this output from a serial job:
 
 .. code-block:: console
+
   Job ID: 1168
   Cluster: hec-main
   User/Group: testuser/local

@@ -131,7 +131,7 @@ network based storage. Wherever possible create any
 temporary/transient files in temp.
 
 **Clean up your filestore regularly.**
-With the ability to run hundred of jobs simultaneously, user 
+With the ability to run hundreds of jobs simultaneously, user 
 filestore can quickly become cluttered with files (e.g. job 
 stdout and stderr files). Small files in particular have a relatively high
 space overhead - even a small file will consume 32k of quota due to metadata
@@ -220,15 +220,15 @@ There are several applications which support this. One such application is
   and Windows text files. Binary files (i.e. files whose contents are not 
   solely ASCII text) should be transferred in *binary mode*.
 
-Transferring files to the HEC from luna or other smb-compliant services
+Transferring files to the HEC from Luna or other smb-compliant services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The HEC login node has a high bandwidth connection to luna, the ISS-managed 
+The HEC login node has a high bandwidth connection to Luna, the ISS-managed 
 research data archive. While users can transfer files between folders on 
-luna and the HEC using their PC, for large file transfers using the 
-``smbclient`` tool to connect from the HEC directly to luna is *much* faster.
+Luna and the HEC using their PC, for large file transfers using the 
+``smbclient`` tool to connect from the HEC directly to Luna is *much* faster.
 
-To connect to a folder on luna, ``smbclient`` needs two pieces of information:
+To connect to a folder on Luna, ``smbclient`` needs two pieces of information:
 
 **Faculty code**: Faculty codes are typically the faculty's acronym 
 (e.g. FST for Faculty of Science and Technology, FASS for Faculty 
@@ -238,7 +238,7 @@ of the *\\\\luna* tree under the Windows File Explorer.
 **The folder path**: The path is the series of subfolders required 
 to navigate the tree to the required subdirectory.
 
-The command to connect to a folder on luna is then:
+The command to connect to a folder on Luna is then:
 
 .. code-block:: console
 
@@ -269,7 +269,7 @@ Here's an example of uploading a file to the folder:
   putting file myfile as \py\gondor\myfile (529105.6 kb/s) (average 529105.6 kb/s)
 
 The transfer speed here is notably higher than via file transfer on Windows, 
-as the data is passed directly from the HEC to the folder on luna without having to pass 
+as the data is passed directly from the HEC to the folder on Luna without having to pass 
 through the user's PC first.
 
 Using Kerberos tickets with smbclient
@@ -288,5 +288,5 @@ argument to the smbclient command:
 If your ticket has expired, you can generate a new one by running the ``kinit`` 
 command and entering your regular password.
 
-For more advanced usage of smblcient, use the command ``man smbclient`` to view the 
+For more advanced usage of smbclient, use the command ``man smbclient`` to view the 
 command's manual page.

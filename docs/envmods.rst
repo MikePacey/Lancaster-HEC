@@ -47,7 +47,8 @@ the default version is indicated. The default version can be accessed
 using just the module name, rather than the full name.
 
 As the full list of modules is lengthy, you can type ``module avail packagename``
-to list versions of the specified package name. For example:
+to list versions of the specified package name. For example you can view the available
+versions of the intel compiler suite with the command ``module avail intel``:
 
 .. code-block:: console
 
@@ -68,8 +69,7 @@ A brief description of each software package can be obtained with the
   --------------------------- /usr/shared_apps/Nmodules/compilers ----------------------------
           intel/21.0u4: the intel oneapi compiler suite, 2021 version 4
 
-  homepage: https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html#base-
-kit
+  homepage: https://www.intel.com/content/www/us/en/developer/tools/oneapi/toolkits.html#base-kit
 
 Using modules
 -------------
@@ -83,14 +83,14 @@ use the ``module add`` command. For example:
 
 The above command will configure your environment to use the current default 
 version of the Intel Compiler Suite tools, which in the example output from 
-``module avail`` above would version 12.1. To request a specific version of a 
+``module avail`` above would version 20.0u4. To request a specific version of a 
 package (e.g. version 11.1), use the full module name:
 
 .. code-block:: console
 
   module add intel/21.0u4
 
-To view the modules currently added to your environment, use the **module list** command:
+To view the modules currently added to your environment, use the ``module list`` command:
 
 .. code-block:: console
 
@@ -98,7 +98,7 @@ To view the modules currently added to your environment, use the **module list**
   Currently Loaded Modulefiles:
    1) intel/21.0u4 
 
-To remove modules from your environment, use the **module rm** command:
+To remove modules from your environment, use the ``module rm`` command:
 
 .. code-block:: console
 
@@ -148,7 +148,7 @@ Switching to different versions of modules
 ------------------------------------------
 
 Sometimes you may wish to switch between different versions of a software 
-package. Rather than invoke module rm followed by module add, you can 
+package. Rather than invoke ``module rm`` followed by ``module add``, you can 
 simply use module switch instead:
 
 .. code-block:: console
