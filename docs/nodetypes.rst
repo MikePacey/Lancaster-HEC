@@ -1,3 +1,5 @@
+.. _node types:
+
 Requesting specific node types
 ==============================
 
