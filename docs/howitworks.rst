@@ -33,9 +33,7 @@ servers covering a variety of generations of Intel processor,
 offering a mixture of 16 cores (Ivy Bridge through to 
 Broadwell architecture), 40 cores (for Skylake) and 64 cores 
 (Cascade Lake and Ice Lake). The memory size for a standard 
-compute node is 4G per core, with a few nodes offering 
-double that in order to support jobs with larger memory 
-requirements. Compute node network interconnects are 
+compute node is 4G per core. Compute node network interconnects are 
 10 or 25 Gbit/s low latency Ethernet.
 
 **File store**: The primary file storage system is a 230TB 

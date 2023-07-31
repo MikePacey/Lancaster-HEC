@@ -64,7 +64,7 @@ For parallel jobs making an exclusive resource request (ie, requesting one or mo
 
 * If no node_type is specified, the job will be run as though **node_type=10Geth64G** had been specified.
 
-* If **node_type=10GethAny** is specified, and the memory resource request will be set to 3.95G per core (for a total of 63.2G per node).
+* If **node_type=10Geth64G** or **node_type=10GethAny** is specified, and the memory resource request will be set to 3.95G per core (for a total of 63.2G per node).
 
 * If **node_type=40core192G** is specified, the job will be eligible to run on compute nodes of type 40core192G with a memory resource request of 4.75G per core (for a total of 190G per node).
 

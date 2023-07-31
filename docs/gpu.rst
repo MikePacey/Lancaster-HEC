@@ -31,7 +31,7 @@ The following job will run the CUDA nbody demo application as a benchmark on two
 
   Not all applications will automatically detect how many GPUs should be used.
   Specifying whether to use GPUs, and how may to use, varies widely
-  bewteen applications. In the above example the command line argument *-numdevices=*
+  between applications. In the above example the command line argument *-numdevices=*
   needs to be added to the **nbody** demo application. Refer to your application's User 
   Guide for details on the correct syntax to use.
 
