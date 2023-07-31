@@ -7,7 +7,9 @@ of the HEC 3.0 User Guide below.
 
 The HEC testbed is currently configured with a small number of
 compute nodes assigned to the queues **serial**, **parallel** and **test**
-with similar functionality to the current production HEC
+for CPU-based jobs, and **gpu-short**, **gpu-medium** and gpu-long** for
+GPU-based jobs.
+These queues offer functionality to the current production HEC
 environment. The aim of this setup is allow users to both
 become familiar with the new SLURM job scheduler and to test
 compatibility of existing applications on the new operating
