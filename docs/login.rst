@@ -5,9 +5,10 @@ Once registered for an account, you can access the High
 End Computing (HEC) cluster from on campus using any 
 application offering support for Secure Shell (ssh).
 
-.. note: If you are not using a Secure PC, MyLab or MyDesktop, 
-         you will need to connect to the VPN in order to 
-         access the HEC when off campus.
+.. note::
+  If you are not using a Secure PC, MyLab or MyDesktop, 
+  you will need to connect to the VPN in order to 
+  access the HEC when off campus.
 
 From the Interactive Unix Service (IUS) or any local Linux desktop, 
 you can access the HEC by typing the following in a session window:

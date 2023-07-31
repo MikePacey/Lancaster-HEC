@@ -1,5 +1,5 @@
-Parallel jobs
-=============
+Overview of Parallel jobs
+=========================
 
 The web page explaining basic job submission assumed that jobs
 were serial (single core) and so were submitted to the serial

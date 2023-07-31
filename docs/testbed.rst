@@ -22,12 +22,12 @@ Production queues
 -----------------
 
 The HEC 3.0 testbed also contains a number of compute nodes in queues
-**prod-serial** and **prod-parallel*. These queues currently have no
+**prod-serial** and **prod-parallel**. These queues currently have no
 runtime limits and so can be used for longer-running workloads.
 
 .. warning::
 
-  The HEC 3.0 testbed is still undergoing developement, and so
+  The HEC 3.0 testbed is still undergoing development, and so
   compute nodes may need to be taken down on short notice. Please
   do not submit workloads that require a guarantee of long uptimes.
   (Ie, jobs should either be for testing purposes, or production
