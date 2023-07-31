@@ -45,9 +45,7 @@ Job Lifecycle
 A job's lifecycle can be tracked via the ST (state) field in the output 
 from ``squeue``. All jobs start with a status of PD (pending). If the cluster 
 is busy, or the job has requested a resource which is currently fully 
-utilised, then a job may spend some time in this state. (For more 
-information on requesting resources, please refer to Requesting 
-specific node types for jobs on the HEC.)
+utilised, then a job may spend some time in this state.
 
 Once an appropriate job slot is available, the job's status changes 
 to R (running). A job just finishing will show as state CG (completing) 
