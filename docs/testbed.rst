@@ -17,7 +17,7 @@ system, Rocky 8 (a downstream copy of RedHat Enterprise Linux 8)
 
 The **test** queue has a maximum runtime limit of 5 minutes. The **serial**
 and **parallel** queues both currently have a maximum runtime limit
-of 2 hours. This is to allow user testing without the testbed
+of 12 hours. This is to allow user testing without the testbed
 becoming filled with long-running jobs.
 
 Production queues
