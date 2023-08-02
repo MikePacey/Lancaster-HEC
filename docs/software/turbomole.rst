@@ -8,13 +8,13 @@ authorise access to the software.  Further information can be found
 on the Turbomole website.
 
 Further information can be found on the 
-`Turbomole website<http://www.turbomole.com/>`_.
+`Turbomole website<http://www.turbomole.com/>`_
 
 Viewing available verisons of turobmole
 ---------------------------------------
 
-The view the currently available turbomole modules, run the command
-`module av turbomole`. It will produce output similar to this:
+To view the currently available turbomole modules, run the command
+``module av turbomole``. It will produce output similar to this:
 
 .. code-block:: bash
 
@@ -42,13 +42,13 @@ script (for instance, called *jobex.com*) like the following:
 
 The final line in the script is a call to the relevant turbomole script 
 (in this case jobex). Note that no additional environment variables 
-need to be set up — this is all handled by the turbomole module file. 
+need to be set up - this is all handled by the turbomole module file. 
 The script is then submitted for running by running the following 
-from the directory containing you job's data files: `qsub jobex.com`
+from the directory containing your job's data files: ``qsub jobex.com``
 
 The job submission template above follows the same template as a general 
 serial batch job. You can read more about this on the :ref:`Submitting jobs on 
-the HEC page under the Batch jobs section<submit>`.
+the HEC<submit>` page under the Batch jobs section.
 
 A sample batch job script for SMP parallel jobex
 ------------------------------------------------
@@ -68,7 +68,6 @@ applications, the following template job script can be used:
   source /etc/profile
   module add turbomole/6.6-smp
 
-  source $TM_MIGRATE
   export TM_PAR_FORK=ON
 
   jobex
@@ -113,7 +112,7 @@ for details. To prevent wasting resource on the HEC, SMP Turbomole should only
 be used for workloads that can efficiently use the number of requested cores.
 
 The template above is intended as an example. The template can be modified 
-in the same way as an OpenMP parallel job. Please refer to the :ref:`Using OpenMP 
-on the HEC<openmp>` page for an explanation of the job directives contained in the 
-above templates.
+in the same way as an OpenMP parallel job. Please refer to 
+the :ref:`Using OpenMP on the HEC<openmp>` page for an explanation of the job 
+directives contained in the above templates.
 
