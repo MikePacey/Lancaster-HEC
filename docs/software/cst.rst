@@ -32,7 +32,7 @@ CST which uses all cores on 40-core compute node:
 A sample GPU job script for CST
 -------------------------------
 
-For GPU runs, the both the job script and the application needs
+For GPU runs, both the job script and the application call need
 to specify the number of CPUs and GPus requested. The following example
 requests 5 cores and a single GPU:
 
