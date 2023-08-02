@@ -1,3 +1,5 @@
+.. _open mp:
+
 OpenMP parallel jobs
 ====================
 

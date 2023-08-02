@@ -1,3 +1,5 @@
+.. _job submit:
+
 Job Submission on the HEC
 =========================
 
