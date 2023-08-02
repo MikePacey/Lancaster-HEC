@@ -25,14 +25,32 @@ CST which uses all cores on 40-core compute node:
   #SBATCH --exclusive
 
   source /etc/profile
-  module add CST/2022
+  module add CST
 
-  export OMP_NUM_THREADS=$NSLOTS
-
-  cst_design_environment -m -r --numthreads=$NSLOTS mymodel.cst
+  cst_design_environment -m -r --numthreads=${NSLOTS} mymodel.cst
 
 A sample GPU job script for CST
 -------------------------------
+
+For GPU runs, the both the job script and the application needs
+to specify the number of CPUs and GPus requested. The following example
+requests 5 cores and a single GPU:
+
+.. code:: bash
+
+  #!/bin/bash
+
+  #SBATCH -p gpu-short
+  #SBATCH --gres=gpu:1
+  #SBATCH --mem=20G
+  #SBATCH --time=10:00:00
+  #SBATCH --cpus-per-task=5
+
+  source /etc/profile
+  module add CST
+
+  cst_design_environment -m -r --numthreads=${NSLOTS} \
+    --withgpu=${SLURM_GPUS_ON_NODE} mymodel.cst
 
 Further Reading
 ---------------
