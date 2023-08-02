@@ -70,6 +70,8 @@ Contents
    software/lammps
    software/namd
    software/opence
-   software/r.rst
-   software/stata.rst
+   software/r
+   software/stata
+   software/turbomole
+   
 
