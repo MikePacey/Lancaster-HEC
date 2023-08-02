@@ -7,7 +7,7 @@ Andrew Kerridge in the Chemistry Department. Please contact him to
 authorise access to the software.  Further information can be found 
 on the Turbomole website.
 
-Further information can be found on the `Turbomole website<http://www.turbomole.com/>`_
+Further information can be found on the `Turbomole website<http://www.turbomole.com/>`
 
 Viewing available verisons of turobmole
 ---------------------------------------
@@ -47,7 +47,7 @@ from the directory containing your job's data files: ``qsub jobex.com``
 
 The job submission template above follows the same template as a general 
 serial batch job. You can read more about this on 
-the :ref:`Submitting jobs on the HEC<job submit>` page under the Batch jobs section.
+the :ref:`Submitting jobs on the HEC<job submit>`_ page under the Batch jobs section.
 
 A sample batch job script for SMP parallel jobex
 ------------------------------------------------
@@ -112,6 +112,6 @@ be used for workloads that can efficiently use the number of requested cores.
 
 The template above is intended as an example. The template can be modified 
 in the same way as an OpenMP parallel job. Please refer to 
-the :ref:`Using OpenMP on the HEC<open mp>` page for an explanation of the job 
+the :ref:`Using OpenMP on the HEC<open mp>`_ page for an explanation of the job 
 directives contained in the above templates.
 
