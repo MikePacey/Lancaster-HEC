@@ -196,7 +196,7 @@ running job can be viewed vie the command
 
 .. code-block:: console
 
-  wayland-2020% qcgtop -u testuser
+  wayland-2022% qcgtop -u testuser
 
          Job   %CPU Memory
          ---   ---- ------

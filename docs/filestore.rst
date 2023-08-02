@@ -160,7 +160,7 @@ desktop/the IUS in the format below:
  
 .. code-block:: console
 
-  scp myfilename username@wayland.hec.lancaster.ac.uk:mydirectory
+  scp myfilename username@wayland-2022.hec.lancaster.ac.uk:mydirectory
 
 This will copy *myfilename* in the current directory into the directory 
 *mydirectory* on the HEC.
@@ -170,7 +170,7 @@ this command on your local machine:
  
 .. code-block:: console
 
-  scp username@wayland.hec.lancaster.ac.uk:myfilename mydirectory
+  scp username@wayland-2022.hec.lancaster.ac.uk:myfilename mydirectory
 
 This will copy *myfilename* from the HEC into *mydirectory* on your local machine.
 
@@ -188,7 +188,7 @@ To copy directories and their contents, use ``scp -r``, for example :
  
 .. code-block:: console
 
-  scp -r mydirectory username@wayland.hec.lancaster.ac.uk:mydirectory
+  scp -r mydirectory username@wayland-2022.hec.lancaster.ac.uk:mydirectory
 
 The ``scp`` command defaults to your home directory on the HEC, so relative 
 file paths should start from there. For storage, scratch or other 
@@ -249,7 +249,7 @@ folder for a research group in the Faculty of Science and Technology:
 
 .. code-block:: console
 
-  wayland% smbclient -D py/gondor //luna/fst
+  wayland-2022% smbclient -D py/gondor //luna/fst
   Enter LANCS\testuser's password: 
   Try "help" to get a list of possible commands.
   smb: \py\gondor\> 

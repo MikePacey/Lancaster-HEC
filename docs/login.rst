@@ -15,11 +15,11 @@ you can access the HEC by typing the following in a session window:
 
 .. code-block:: console
 
-  ssh -X username@wayland.hec.lancaster.ac.uk
+  ssh -X username@wayland-2022.hec.lancaster.ac.uk
 
 From a local Windows PC, the HEC can be accessed using PuTTY or any 
 ssh (Secure Shell) capable application using the same hostname: 
-wayland.hec.lancs.ac.uk. The PuTTY application is available on 
+wayland-2022.hec.lancs.ac.uk. The PuTTY application is available on 
 AppsAnywhere to enable ssh connections on university PCs.
 
 For Windows PC users who wish to use applications on the HEC which 
