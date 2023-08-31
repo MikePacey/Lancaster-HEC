@@ -1,7 +1,7 @@
 Stata and StataMP
 =================
 
-The HEC hosts an unlimted network licence iversion of Stata MP4, along
+The HEC hosts an unlimted network licence version of Stata MP4, along
 with 2 licenses each for Stata MP8 and Stata MP16 available
 for members of the Economics department.
 
