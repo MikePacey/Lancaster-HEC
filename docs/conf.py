@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Tutorial/Linux'
-copyright = '2016, Robin Long'
-author = 'Robin Long'
+project = 'HEC 3.0 User Guide'
+copyright = '2023, Mike Pacey'
+author = 'Mike Pacey'
 
 
 # -- General configuration ---------------------------------------------------
