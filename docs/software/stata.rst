@@ -113,5 +113,5 @@ While for Stata MP16, an example script is:
 
 Note that these versions need the ``--license`` resource request for the approriate
 version to ensure that no more than 2 copies of each are running at once. If all
-licenses are in use, job will help pending until a licence - and the other requested
+licenses are in use, jobs will be held pending until a licence - and the other requested
 resources - are available.
