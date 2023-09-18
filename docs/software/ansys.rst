@@ -118,9 +118,11 @@ job template can be used:
   #SBATCH -C node_type=10Geth64G
 
   source /etc/profile
-  module add ansys/19.1
+  module add ansys/21.2
 
-  fluent 3ddp -g -slurm -t${NSLOTS} -mpi=openmpi -i runjob.jou
+  scontrol show hostnames > $TMPDIR/fluent.hosts
+
+  fluent 3ddp -g -t ${NSLOTS} -cnf=$TMPDIR/fluent.hosts -mpi=openmpi -i runjob.jou
 ::
 
 Where runjob.jou is the name of your fluent journal file. Ansys 
