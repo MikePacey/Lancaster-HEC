@@ -17,7 +17,7 @@ CST which uses all cores on 40-core compute node:
 
 .. code-block:: bash
 
-  #!bin/bash
+  #!/bin/bash
 
   #SBATCH --part=parallel
   #SBATCH --nodes=1
