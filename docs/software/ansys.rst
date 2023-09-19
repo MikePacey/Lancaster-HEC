@@ -122,7 +122,7 @@ job template can be used:
 
   scontrol show hostnames > $TMPDIR/fluent.hosts
 
-  fluent 3ddp -g -t ${NSLOTS} -cnf=$TMPDIR/fluent.hosts -mpi=openmpi -i runjob.jou
+  fluent 3ddp -g -t ${NSLOTS} -cnf=$TMPDIR/fluent.hosts -mpi=intel -i runjob.jou
 ::
 
 Where runjob.jou is the name of your fluent journal file. Ansys 
