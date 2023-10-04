@@ -1,21 +1,6 @@
 HEC 3.0 Documentation
 =====================
 
-This documentation is a guide to using the HEC 3.0 test bed,
-in particular the SLURM job scheduler which will replace
-the current SGE job scheduler. The structure of this guide
-is broadly similar to the current official HEC user guide
-so you can easily compare the two.
-
-.. toctree::
-  :maxdepth: 1
-
-  testbed
-
-.. note:: 
-   The HEC 3.0 test bed is under development, so check
-   back regularly to see what changes have been made to best practice.
-
 Contents
 --------
 

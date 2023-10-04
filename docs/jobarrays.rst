@@ -85,7 +85,7 @@ index number appears in the Job ID field:
 The above example shows a job with 100 tasks. As the cluster is busy, only tasks 
 1 through 7 are currently running and the remaining tasks are listed as PD (pending).
 
-If you want to stop all the tasks of a job at once, you can use the normal scancel command, e.g.:
+If you want to cancel all the tasks of a job at once, you can use the normal scancel command, e.g.:
 
 .. code-block:: console
 

@@ -212,3 +212,11 @@ in this queue will be automatically terminated.
   The test queue is available only on a single dedicated compute node which 
   has 16 cores, 64G of memory and node_type 10Geth64G. When testing, make 
   sure that your job resource requests can match this.
+
+Cancelling jobs
+---------------
+
+If you want to cancel a job - either while it's running or still pending,
+you can cancel it with the ``scancel`` command followed by its job ID. 
+For example to cancel job ID 1234, run the command ``scancel 1234``
+
