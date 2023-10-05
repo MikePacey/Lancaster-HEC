@@ -25,3 +25,4 @@ author = 'Mike Pacey'
 # -- General configuration ---------------------------------------------------
 # -- General configuration
 
+html_theme = 'sphinx_rtd_theme'
