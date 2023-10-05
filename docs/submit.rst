@@ -216,7 +216,7 @@ in this queue will be automatically terminated.
 Cancelling jobs
 ---------------
 
-If you want to cancel a job - either while it's running or still pending,
-you can cancel it with the ``scancel`` command followed by its job ID. 
+If you want to delete or cancel a job - either while it's running or still pending,
+you can do so with the ``scancel`` command followed by its job ID. 
 For example to cancel job ID 1234, run the command ``scancel 1234``
 

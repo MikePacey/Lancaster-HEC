@@ -22,7 +22,8 @@ The output columns are fairly self-explanatory:
 .. list-table::
 
   * - JOBID
-    - A number used to uniquely identify your job within the job scheduling system. Use this number when you want to terminate a job via the scancel command.
+    - A number used to uniquely identify your job within the job scheduling system. Use this 
+number when you want to delete or cancel a job via the ``scancel`` command.
   * - PARTITION
     - The name of the partition (queue) the job was submitted to
   * - NAME
