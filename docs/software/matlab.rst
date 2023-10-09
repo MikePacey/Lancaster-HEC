@@ -7,10 +7,10 @@ module via the following command:
 
 .. code-block:: console
 
-  module add R
+  module add matlab
 
 Using the module's primary name on its own will result in the 
-defalt version of R being used. To see what other versions of 
+defalt version of matlab being used. To see what other versions of 
 matlab are currently available, type:
 
 .. code-block:: console
@@ -35,6 +35,7 @@ twice the value it receives as an argument, contained in file called *twotimes.m
 This function can be called with a job script like this:
 
 .. code-block:: bash
+
   #!/bin/bash
 
   #SBATCH -p serial
