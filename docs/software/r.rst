@@ -17,7 +17,8 @@ R are currently available, type:
 
   module avail R
 
-See the Using environment modules on the HEC page for more details on the module command.
+See the :ref:`Using environment modules on the HEC <envmods>` page for 
+more details on the module command.
 
 A sample batch job script for R
 -------------------------------

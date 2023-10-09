@@ -53,6 +53,7 @@ Contents
    software/gromacs
    software/gsl
    software/lammps
+   software/matlab
    software/namd
    software/opence
    software/r
