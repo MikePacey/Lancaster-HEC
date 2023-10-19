@@ -56,11 +56,11 @@ should use the NVidia HPC SDK described below. The old pgi
 modules are retained only to allow backward compatibility with 
 older software built with them.
 
-To access the Portland Group compiler suite, load the nv-hpc-sdk module:
+To access the Portland Group compiler suite, load the nvhpc module:
 
 .. code-block:: console  
 
-  module add nv-hpc-vsdk
+  module add nvhpc
 
 The Portland Compilers (**pgcc**, **pgCC**, **pgf77**, **pgf90** and **pgf95**) 
 can now be invoked. The recommended starting point for optimising code is to add the flag:
