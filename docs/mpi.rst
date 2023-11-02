@@ -151,3 +151,66 @@ any memory resource requests made in the job script or the sbatch command
 line will be over-ridden. Note: as this feature takes memory resource 
 requests outside of the user's control, memory efficiency values in reporting 
 tools like seff can be ignored.
+
+Running small parallel jobs
+---------------------------
+
+As not all parallel jobs scale efficiently to the size of at least a
+single node, an alternative syntax can be used to request parallel
+jobs with a small core count. The nodes= syntax can be replaced by a
+request for the specific amount of cores requires using the np=
+syntax. For example:
+
+.. code-block:: bash
+
+  #!/bin/bash
+
+  #SBATCH -p parallel
+  #SBATCH --cpus-per-task=8
+  #SBATCH --mem=8000M
+
+  source /etc/profile
+
+  module add openmpi
+
+  mpirun --bind-to none myapp
+
+The above job runs the same application as the first example but
+requests only 8 cores, all on the same compute node. As this syntax
+doesn't an exclusive node the remaining cores on the compute
+node will be available for other jobs.
+
+Note that smaller MPI jobs *must* specify their memory requirements - as
+they don't reserve a whole node they cannot assume all the node's
+memory will be available. The memory resource request uses the same
+syntax as for serial jobs (e.g. ``--mem=8000M`` ).
+
+Note also that the above syntax ensures that all job slots for the job
+are on the same node. As a result, the value should never be greater
+than the maximum number of cores on the largest compute node - this is
+currently 64.
+
+Tips on parallel jobs
+---------------------
+
+* Not all jobs scale well when parallelised - running on n cores will
+  not result in your code running n times faster. Always test an
+  application with different job sizes (including single-core) to find
+  the 'sweet spot' which best uses the resources available.
+
+* The system has been designed to support MPI jobs with moderate message
+  passing on up to 64 processors. Applications with lighter message
+  passing loads may scale higher than this.
+
+* As parallel jobs require much more resource than regular single-core
+  batch jobs, there is usually a much longer wait between job submission
+  and job launch, particularly when the cluster is busy. Opt to submit
+  jobs as serial rather than parallel unless the improvement in runtime
+  is essential.
+
+* It can be frustrating to wait a long time for a parallel job to
+  launch, only for it to quickly fail due to bugs in the job script. You
+  can test a new parallel job script by directing it to the test queue
+  (Read more about test queues on the Submitting jobs on the HEC
+  page). Be aware that the test queue only offers a single, 16-core
+  compute node of type 10Geth64G.
