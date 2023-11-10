@@ -11,6 +11,7 @@ Contents
    intro 
    howitworks
    getaccount
+   referencing
 
 .. toctree::
    :caption: HEC Basics
@@ -59,8 +60,3 @@ Contents
    software/r
    software/stata
    software/turbomole
-   
-.. toctree::
-   :maxdepth: 1
-
-   referencing
