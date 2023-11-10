@@ -61,6 +61,6 @@ Contents
    software/turbomole
    
 .. toctree::
-   :maxdept: 1
+   :maxdepth: 1
 
    referencing
