@@ -186,6 +186,8 @@ become available. E.g:
   have finished your tasks - your job slot and any resources it 
   reserves are not available to anyone else until you do so.
 
+.. _test queue:
+
 The test queue
 --------------
 

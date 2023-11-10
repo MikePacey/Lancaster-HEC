@@ -60,4 +60,7 @@ Contents
    software/stata
    software/turbomole
    
+.. toctree::
+   :maxdept: 1
 
+   referencing

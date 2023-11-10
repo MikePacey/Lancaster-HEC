@@ -193,8 +193,8 @@ currently 64.
 Tips on parallel jobs
 ---------------------
 
-* Not all jobs scale well when parallelised - running on n cores will
-  not result in your code running n times faster. Always test an
+* Not all jobs scale well when parallelised - running on *n* cores will
+  not result in your code running *n* times faster. Always test an
   application with different job sizes (including single-core) to find
   the 'sweet spot' which best uses the resources available.
 
@@ -209,8 +209,9 @@ Tips on parallel jobs
   is essential.
 
 * It can be frustrating to wait a long time for a parallel job to
-  launch, only for it to quickly fail due to bugs in the job script. You
+  launch only for it to quickly fail due to bugs in the job script. You
   can test a new parallel job script by directing it to the test queue
-  (Read more about test queues on the Submitting jobs on the HEC
-  page). Be aware that the test queue only offers a single, 16-core
+  (Read more about test queues on the 
+  :ref:`Submitting jobs on the HEC <test queue>` page
+  ). Be aware that the test queue only offers a single, 16-core
   compute node of type 10Geth64G.
