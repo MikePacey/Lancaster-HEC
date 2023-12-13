@@ -6,7 +6,9 @@ GPUs (Graphics Processing Units) are a specialist type of computing hardware ori
 .. note:
   Most applications aren't GPU-capable as software must be written specifically to make 
   use of GPU hardware. Check the User Guide for your application to see if it supports
-  GPU use
+  GPU use, and whether it support multiple GPUs. When testing a new GPU application be
+  sure to use the GPU Resource Monitoring advice below to ensure that your application
+  is genuinely using a GPU.
 
 Example of a batch GPU job script
 ---------------------------------
@@ -91,14 +93,17 @@ of longer-running jobs. There are three different queues for GPU jobs: **gpu-sho
   * - Queue name
     - Time limit
     - Max # of GPUs per user
-  * - short
+  * - gpu-short
     - 12 hours
     - Unlimited
-  * - medium
+  * - gpu-medium
     - 48 hours
     - 6
-  * - long
+  * - gpu-long
     - 7 days
+    - 2
+  * - astro
+    - 24 hours
     - 2
 
 .. note::
@@ -106,9 +111,29 @@ of longer-running jobs. There are three different queues for GPU jobs: **gpu-sho
    GPU jobs have a maximum runtime, dependent on the queue they are submitted to,
    as described in the table above.
    It is *strongly* recommend to use an accurate **--time=** resource request as
-   this helps with schelduling jobs on the small number of GPUs available. Longer
+   this helps with scheduling jobs on the small number of GPUs available. Longer
    jobs will stay pending for longer, as it's more difficult for the job scheduler
    to fairly schedule longer running jobs.
+
+A Note on the Astro Queues
+--------------------------
+
+The *astro*, *astro-tier1* and *astro-tier2* queues are attached to a single GPU node offering
+4 x NVidia L40 GPU cards. These more specialist GPUs are generally available to all
+HEC users with the following caveats:
+
+**Performance**: The L40 GPUs perform better than the V100 GPUs for single- and half-precision
+floating point arithemetic, making them suitable for many machine learning tasks.
+However, they perform notably worse for double precision. Before submitting
+jobs to this queue make sure that your application doesn't use double precision as it
+will run much more slowly than on the V100s on the gpu- queues.
+
+**Priority**: When the queue becomes busy, priority will be given to jobs belonging
+to researchers associated with the contributing Research Group so non-priority jobs
+may experience longer wait times during busy periods. Priority users will be notified
+on account creation that they have access to the *astro-tier1* or *astro-tier2* priority
+queues. All other users will have access to the *astro* queue.
+
 
 GPU resource monitoring
 -----------------------
@@ -280,3 +305,9 @@ The HEC currently offers the following GPU nodes:
     - 192G
     - 6
     - Maths and Stats Dept
+  * - NVidia L40 48G
+    - 4
+    - 32
+    - 512G
+    - 1
+    - Space & Planetary Physics Group
