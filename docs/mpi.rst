@@ -173,7 +173,7 @@ syntax. For example:
 
   module add openmpi
 
-  mpirun --bind-to none myapp
+  mpirun -n ${SLURM_CPUS_ON_NODE} --bind-to none myapp
 
 The above job runs the same application as the first example but
 requests only 8 cores, all on the same compute node. As this syntax
