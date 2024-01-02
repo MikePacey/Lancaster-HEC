@@ -92,7 +92,7 @@ For Stata MP8, an example script is:
   #SBATCH --license=statamp8
 
   source /etc/profile
-  module add statamp8
+  module add stata/18-mp8
 
   stata-mp -b do filename
 
@@ -107,7 +107,7 @@ While for Stata MP16, an example script is:
   #SBATCH --license=statamp16
 
   source /etc/profile
-  module add statamp16
+  module add stata/18-mp16
 
   stata-mp -b do filename
 
