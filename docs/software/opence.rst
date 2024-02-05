@@ -5,7 +5,7 @@ Open-CE (the Open Cognitive Environment) is a freely available software stack
 which provides several GPU-enabled python Machine Learning libraries 
 including TensorFlow, Keras, Torch in Torchvision. On the HEC, the
 software stack is available as a virtual environment within 
-a miniconda module, both of which will be set up upen calling the opence
+a miniconda module, both of which will be set up by calling the opence
 module.
 
 The following example job script shows how to invoke 
