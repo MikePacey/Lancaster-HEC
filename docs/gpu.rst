@@ -189,7 +189,7 @@ be:
 
 The most relevant entry is the "SM Utilization (%)" line, which shows the average,
 minimum and maximum utilisation of GPU cores. The line above that labelled "Max GPU Memory 
-Used (bytes)" reports the maximum amount of GPU memory (not to be confused the the compute
+Used (bytes)" reports the maximum amount of GPU memory (not to be confused with the compute
 node's main memory) used by the job.
 
 Each jobs' GPU utilisation can also be monitored while running using the **qgputop** 
