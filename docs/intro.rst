@@ -9,9 +9,9 @@ Virtual Desktops (mydesktop and mylab).
 
 The service combines what was the previously separately supported services for
 local high performance computing (HPC) users and the local Particle Physics
-research group (GridPP). The combined facility offers 13,000 cores, 59TB of
-aggregate memory, 24 Tesla V100 GPUs, 230TB of GPFS-based filestore for
-general use and 10PB of Ceph-based filestore for GridPP data.  
+research group (GridPP). The combined facility offers 14,000 cores, 61TB of
+aggregate memory, 24 NVidia V100 GPUs, 8 NVidia L40 GPUs, 230TB of GPFS-based 
+filestore for general use and 10PB of Ceph-based filestore for GridPP data.  
 
 The cluster operating system is Rocky Linux 8, with job submission handled by
 the SLURM Workload Manager. The service supports a wide variety of third-party
