@@ -104,7 +104,7 @@ of longer-running jobs. There are three different queues for GPU jobs: **gpu-sho
     - 2
   * - astro
     - 24 hours
-    - 2
+    - 4
 
 .. note::
 
@@ -309,5 +309,5 @@ The HEC currently offers the following GPU nodes:
     - 4
     - 32
     - 512G
-    - 1
+    - 2
     - Space & Planetary Physics Group
