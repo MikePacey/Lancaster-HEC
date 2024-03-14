@@ -310,4 +310,4 @@ The HEC currently offers the following GPU nodes:
     - 32
     - 512G
     - 2
-    - Space & Planetary Physics Group
+    - Observational Astrophysics Group
