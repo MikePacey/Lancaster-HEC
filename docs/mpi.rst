@@ -166,14 +166,15 @@ syntax. For example:
   #!/bin/bash
 
   #SBATCH -p parallel
-  #SBATCH --cpus-per-task=8
+  #SBATCH --nodes=1
+  #SBATCH --ntasks=8
   #SBATCH --mem=8000M
 
   source /etc/profile
 
   module add openmpi
 
-  mpirun -n ${SLURM_CPUS_ON_NODE} --bind-to none myapp
+  mpirun --bind-to none myapp
 
 The above job runs the same application as the first example but
 requests only 8 cores, all on the same compute node. As this syntax
