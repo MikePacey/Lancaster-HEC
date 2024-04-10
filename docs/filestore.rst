@@ -84,6 +84,17 @@ For each filestore area the output shows the following info:
 your quota limit; how much you've used; how much is available; 
 a percentage usage; and the total number of files you have in that area.
 
+Extracting tar and zip files in scratch
+---------------------------------------
+
+Files in the scratch area are deleted if their last-modified timestamps are 
+older than four weeks. Both ``tar`` and ``unzip`` preserve the original 
+timestamps of extracted files by default, resulting in older unpacked files 
+being deleted overnight if their original timestamp is older than four weeks. 
+To avoid this, use the argumenti ``-DD`` with ``unzip`` or ``m`` with ``tar`` -
+both options will use the current time as the last-modified timestamp for extracted 
+files.
+
 Best practice using the Filestore
 ---------------------------------
 

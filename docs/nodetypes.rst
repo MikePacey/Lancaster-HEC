@@ -74,4 +74,4 @@ For parallel jobs making an exclusive resource request (ie, requesting one or mo
 
 For parallel jobs that do not make an exclusive request (ie, OpenMP jobs requesting a number of cores all on the same compute node):
 
-* If no node_type is specified the job will be eligible to run on any node that can suport the number of cores and amount of memory requested
+* If no node_type is specified the job will be eligible to run on any node that can support the number of cores and amount of memory requested
