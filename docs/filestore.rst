@@ -91,7 +91,7 @@ Files in the scratch area are deleted if their last-modified timestamps are
 older than four weeks. Both ``tar`` and ``unzip`` preserve the original 
 timestamps of extracted files by default, resulting in older unpacked files 
 being deleted overnight if their original timestamp is older than four weeks. 
-To avoid this, use the argumenti ``-DD`` with ``unzip`` or ``m`` with ``tar`` -
+To avoid this, use the argument ``-DD`` with ``unzip`` or ``m`` with ``tar`` -
 both options will use the current time as the last-modified timestamp for extracted 
 files.
 
