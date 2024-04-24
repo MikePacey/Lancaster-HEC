@@ -178,7 +178,7 @@ syntax. For example:
 
 The above job runs the same application as the first example but
 requests only 8 cores, all on the same compute node. As this syntax
-doesn't an exclusive node the remaining cores on the compute
+doesn't request an exclusive node the remaining cores on the compute
 node will be available for other jobs.
 
 Note that smaller MPI jobs *must* specify their memory requirements - as
