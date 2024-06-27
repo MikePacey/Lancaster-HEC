@@ -46,7 +46,7 @@ A summary of the different filestores area is given below:
      - Nightly for 90 days
      - Permanent
    * - storage
-     - 100G
+     - 200G
      - None
      - Permanent
    * - scratch
