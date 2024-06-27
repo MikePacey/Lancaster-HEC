@@ -14,7 +14,7 @@ The **home** area is subject to a small (10G) quota. The home
 area is backed up nightly for 90 days, and should be used 
 for essential files (e.g. job submission scripts and your own codes).
 
-The **storage** area has a larger quota (100G) but is not backed up. 
+The **storage** area has a larger quota (200G) but is not backed up. 
 This area should typically be used to store job outputs, your 
 own applications, or other research data that can be regenerated if lost.
 
@@ -77,7 +77,7 @@ Typical output from gpfsquota looks like this:
 
   Filesystem          Quota      Used     Avail     Use%     # files 
   home                  10G     5.50G     4.50G    55.00      24840 
-  storage              100G    44.00G    56.00G    44.00      80640 
+  storage              200G    82.23G   117.77G    41.12     202781
   scratch            10240G  2001.00G  8239.00G    19.54         23
 
 For each filestore area the output shows the following info: 
