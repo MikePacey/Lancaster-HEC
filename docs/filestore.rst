@@ -44,11 +44,11 @@ A summary of the different filestores area is given below:
    * - home
      - 10G
      - Nightly for 90 days
-     - Permanent
+     - For the lifetime of the account
    * - storage
      - 200G
      - None
-     - Permanent
+     - For the lifetime of the account
    * - scratch
      - 10T
      - None
