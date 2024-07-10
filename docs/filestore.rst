@@ -289,15 +289,15 @@ Using Kerberos tickets with smbclient
 If you are using ``smbclient`` several times during a session, you may find it useful
 to use a kerberos ticket to remove the need to repeatedly enter a password for
 authentication. Logging in to the HEC will automatically generate a kerberos ticket for 
-you which is valid for 24 hours. To use the kerberos ticket, simply add the ``-k`` 
-argument to the smbclient command:
+you which is valid for 12 hours. To use the kerberos ticket to authenticate you can use
+the additional arguments: 
 
 .. code-block:: console
 
-  smbclient -k -D folder-path //luna/faculty-code
+  smbclient -N --use-kerberos=required -D folder-path //luna/faculty-code
 
 If your ticket has expired, you can generate a new one by running the ``kinit`` 
 command and entering your regular password.
 
 For more advanced usage of smbclient, use the command ``man smbclient`` to view the 
-command's manual page.
+command's manual page or type ``help`` into the smbclient interface.
