@@ -5,9 +5,8 @@ The High End Computing Cluster is a centrally-managed facility to support
 researchers and research degree students at Lancaster who require high
 performance and high throughput computing.
 
-If you believe you need an account on the HEC, please ask your supervisor
-to apply on your behalf using the Other IT Account Request section
-of the `ISS Helpcentre <https://helpcentre.lancaster.ac.uk/plugins/servlet/desk/portal/4/create/207>`_
+If you believe you need an account on the HEC, please ask your project PI or supervisor
+to apply on your behalf using the form linked from the `ISS HEC page <https://portal.lancaster.ac.uk/ask/hec>`_
 
 * For researchers, the application should be made by the PI of the funded research project
   the work involves
