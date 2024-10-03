@@ -118,8 +118,8 @@ of longer-running jobs. There are three different queues for GPU jobs: **gpu-sho
 A Note on the Astro Queues
 --------------------------
 
-The *astro*, *astro-tier1* and *astro-tier2* queues are attached to a single GPU node offering
-4 x NVidia L40 GPU cards. These more specialist GPUs are generally available to all
+The *astro*, *astro-tier1* and *astro-tier2* queues are attached to two GPU nodes offering
+4 x NVidia L40 GPU cards each. These more specialist GPUs are generally available to all
 HEC users with the following caveats:
 
 **Performance**: The L40 GPUs perform better than the V100 GPUs for single- and half-precision
@@ -129,7 +129,7 @@ jobs to this queue make sure that your application doesn't use double precision 
 will run much more slowly than on the V100s on the gpu- queues.
 
 **Priority**: When the queue becomes busy, priority will be given to jobs belonging
-to researchers associated with the contributing Research Group so non-priority jobs
+to researchers associated with the contributing Research Groupis so non-priority jobs
 may experience longer wait times during busy periods. Priority users will be notified
 on account creation that they have access to the *astro-tier1* or *astro-tier2* priority
 queues. All other users will have access to the *astro* queue.
@@ -192,13 +192,13 @@ minimum and maximum utilisation of GPU cores. The line above that labelled "Max 
 Used (bytes)" reports the maximum amount of GPU memory (not to be confused with the compute
 node's main memory) used by the job.
 
-Each jobs' GPU utilisation can also be monitored while running using the **qgputop** 
-command. The command accepts two flags - either ``-u username`` for all jobs run by the
-named user, or ``-j jobid`` to query a specific job.
+Each jobs' GPU utilisation can also be monitored while the job is running using the **qgputop** 
+command. The command accepts the flags ``-u username``  and will list the GPU usage
+of the jobs by the specified user.
 
 .. code-block:: bash
 
-  JobID 2277, node gpu06
+  Node gpu06
   Mon Jul 10 11:53:39 2023       
   +-----------------------------------------------------------------------------+
   | NVIDIA-SMI 525.85.12    Driver Version: 525.85.12    CUDA Version: 12.0     |
@@ -227,7 +227,12 @@ how much GPU memory they are consuming.
 
 .. note::
 
-  CPU and main system memory usage for GPU jobs can be monitored using the ``qtop`` 
+  If you have multiple jobs running on a gpu node, this tool will not differentiate
+  which GPU belongs to which job.
+
+.. note::
+
+  CPU and main system memory usage for GPU jobs can be monitored using the ``qtop``
   command in the same manner as CPU-only jobs
 
 Compiling CUDA-capable code
