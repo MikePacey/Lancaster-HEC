@@ -13,7 +13,7 @@ GPUs (Graphics Processing Units) are a specialist type of computing hardware ori
 Example of a batch GPU job script
 ---------------------------------
 
-The following job will run the CUDA nbody demo application as a benchmark on two GPUs:
+The following job will run the CUDA **nbody** demo application as a benchmark on two GPUs:
 
 .. code-block:: bash
 
@@ -129,7 +129,7 @@ jobs to this queue make sure that your application doesn't use double precision 
 will run much more slowly than on the V100s on the gpu- queues.
 
 **Priority**: When the queue becomes busy, priority will be given to jobs belonging
-to researchers associated with the contributing Research Groupis so non-priority jobs
+to researchers associated with the contributing Research Groups so non-priority jobs
 may experience longer wait times during busy periods. Priority users will be notified
 on account creation that they have access to the *astro-tier1* or *astro-tier2* priority
 queues. All other users will have access to the *astro* queue.
@@ -143,8 +143,8 @@ suite, which summarises how much GPU resource is used by each job on
 a per-GPU level. The logging is intended to highlight cases
 where jobs make very little - or no - use of GPU resource, which indicates
 that they would be better run as CPU-only jobs. The usage data is appended
-to the end of each jobs's *stdout* file. An example for the **nbody** above job would 
-be:
+to the end of each jobs's *stdout* file. An example for the **nbody** example job above 
+would be:
 
 .. code-block:: bash
 
