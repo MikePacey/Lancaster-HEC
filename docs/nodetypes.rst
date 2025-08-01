@@ -76,6 +76,8 @@ For parallel jobs making an exclusive resource request (ie, requesting one or mo
 
 * If **node_type=64core256G** is specified, the job will be eligible to run on compute nodes of type 64core256G with a memory resource request of 3.95G per core (for a total of 252.8G per node).
 
+* If **node_type=12core512G** is specified, the job will be eligible to run on compute nodes of type 128core512G with a memory resource request of 3.95G per core (for a total of 505.60 per node).
+
 For parallel jobs that do not make an exclusive request (ie, OpenMP jobs requesting a number of cores all on the same compute node):
 
 * If no node_type is specified the job will be eligible to run on any node that can support the number of cores and amount of memory requested
