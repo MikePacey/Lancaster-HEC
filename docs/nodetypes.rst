@@ -22,7 +22,6 @@ Where *type* is one of the following:
 
 
 .. list-table::
-  :widths: 20 10 40 10 30
   :header-rows: 1
 
   * - Type
