@@ -53,6 +53,7 @@ Where *type* is one of the following:
   * - 128core512G
     - 128
     - Intel Granite Rapids
+    - 512G
     - 25Gb low latency
 
 .. note::
