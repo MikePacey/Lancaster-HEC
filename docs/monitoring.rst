@@ -151,11 +151,11 @@ capacity to support it - typically by waiting for other running jobs to complete
 
 Currently two resource quotas are enforced:
 
-**Job slots** have a quota of 350 (i.e. a user may have running jobs consuming 
-a total of up to 350 job slots or cores)
+**Job slots** have a quota of 384 (i.e. a user may have running jobs consuming 
+a total of up to 384 job slots or cores)
 
-**Memory usage** is capped at a total of 1.64TB (i.e. users may have running jobs 
-totalling up to 1.64TB of memory reservations, which with a job slot quota of 350, 
+**Memory usage** is capped at a total of 1.84TB (i.e. users may have running jobs 
+totalling up to 1.84TB of memory reservations, which with a job slot quota of 384, 
 averages 4.8GB per job slot). Please refer to :doc:`/largemem`
 for an explanation of job memory reservation requests.
 
@@ -171,7 +171,7 @@ Resource quotas can be viewed using the ``qquota`` command:
   wayland-2022% qquota
 
   QOSname        Cores           Memory(GB)
-   normal       64/350             512/1640
+   normal       64/384             512/1844
     
 Note that if you haven't run any jobs recently then the output will be blank, as 
 no QoS record will exist for you.
