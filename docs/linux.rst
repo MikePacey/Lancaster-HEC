@@ -9,8 +9,6 @@ material:
 
 * `Introduction to Linux by Lancaster University's Robin Long <https://robinlong-tutorials-linux.readthedocs.io/en/latest/introduction.html>`_
 
-* `Fundamentals of Linux by Lancaster University's Duncan Russell <https://modules.lancaster.ac.uk/course/view.php?id=32142#section-2>`_
-
 * `Search for Linux books using the Lancaster University Library OneSearch facility <http://www.lancaster.ac.uk/library/>`_
 
 You can also subscribe to the Research Software Network channel on Teams

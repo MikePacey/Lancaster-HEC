@@ -64,7 +64,8 @@ submitted as job id **1234** would create output files named **mytest.1234.out**
 **mytest.1234.err**
 
 Job output files are created once the job starts running, though they will
-initially be empty and will slowly fill with output.
+initially be empty and will slowly fill with output. These files will be simple
+text files and can viewed using standard file paging commands such as ``less``
 
 .. note::
 
