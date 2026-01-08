@@ -148,6 +148,25 @@ templates of job scripts for popular packages.
    job scripts directly on the HEC is often much more convenient than writing them on
    your desktop and transferring the files across.
 
+Batch job output files
+----------------------
+
+Batch jobs produce two output files per job, corresponding to the standard output (stdout) and
+standard error (stderr) output channels. A job's output files will be created in
+the current working directory (ie, the directory you are currently in when you run
+the ``sbatch`` command). By default, the job output file names are based upon the job name,
+the job ID, and have either the suffix *out* or *err* depending on which channel they capture.
+
+E.g. a job named *myjob* with a job ID of 1234 will create two job output files named
+*myjob.1234.out* and *myjob.1234.err*.
+
+.. Note::
+
+   The job output files will capture stdout and stderr - ie, the output that you would
+   normally see on screen if you ran the commands directly. Your application may also
+   write data to other files - check the user guide for your specific application for
+   the details.
+
 Interactive jobs
 ----------------
 

@@ -129,7 +129,7 @@ jobs to this queue make sure that your application doesn't use double precision 
 will run much more slowly than on the V100s on the gpu- queues.
 
 **Priority**: When the queue becomes busy, priority will be given to jobs belonging
-to researchers associated with the contributing Research Groups so non-priority jobs
+to researchers associated with the Research Groups that contributed these nodes. Non-priority jobs
 may experience longer wait times during busy periods. Priority users will be notified
 on account creation that they have access to the *astro-tier1* or *astro-tier2* priority
 queues. All other users will have access to the *astro* queue.
