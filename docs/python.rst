@@ -55,7 +55,7 @@ create symlinks to redirect from the user home area:
 
   The above commands assume starting with a clean slate. If you've
   previously used conda, mamba and/or pip some of these directories
-  may already exist, which will result in error. The cleanest solution
+  may already exist, which will result in error messages. The cleanest solution
   in this case is to delete those directories and rerun the above commands
 
 .. Tip::
@@ -105,7 +105,7 @@ Additional libraries can then be installed with the command ``mamba install pack
 .. Tip::
 
    Once you've created a virtual environment you can access it in your jobs by adding the
-   ``module add `` and ``source activate`` commands described above.
+   ``module add`` and ``source activate`` commands described above.
 
 GPU enabled python libraries
 ============================
