@@ -57,6 +57,7 @@ Contents
    software/matlab
    software/namd
    software/opence
+   python
    software/r
    software/stata
    software/turbomole
