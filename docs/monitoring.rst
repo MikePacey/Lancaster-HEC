@@ -152,12 +152,12 @@ capacity to support it - typically by waiting for other running jobs to complete
 
 Currently two resource quotas are enforced:
 
-**Job slots** have a quota of 384 (i.e. a user may have running jobs consuming 
-a total of up to 384 job slots or cores)
+**Job slots** have a quota of 512 (i.e. a user may have running jobs consuming 
+a total of up to 512 job slots or cores)
 
-**Memory usage** is capped at a total of 1.84TB (i.e. users may have running jobs 
-totalling up to 1.84TB of memory reservations, which with a job slot quota of 384, 
-averages 4.8GB per job slot). Please refer to :doc:`/largemem`
+**Memory usage** is capped at a total of 2TB (i.e. users may have running jobs 
+totalling up to 2TB of memory reservations, which with a job slot quota of 512, 
+averages 4GB per job slot). Please refer to :doc:`/largemem`
 for an explanation of job memory reservation requests.
 
 .. note::
