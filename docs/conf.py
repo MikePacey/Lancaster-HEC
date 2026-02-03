@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'HEC 3.0 User Guide'
-copyright = '2023, Mike Pacey'
+copyright = '2023-2026, Mike Pacey'
 author = 'Mike Pacey'
 
 

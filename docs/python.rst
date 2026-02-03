@@ -30,7 +30,7 @@ The four basic steps are:
 
 2. Add the miniforge module to your shell environment in order to access conda and/or mamba.
 
-3. Create your virtual environment with the libries you need.
+3. Create your virtual environment with the libraries you need.
 
 4. Activate your virtual enviroment.
 
@@ -40,7 +40,7 @@ Redirecting conda, mamba and pip's hidden caches
 Conda, mamba and pip each create hidden caching directories. These
 default to the user's home directory, and as that is very small
 on the HEC it's preferable to redirect them to the user's much larger
-storage are.
+storage area.
 
 The following commands will create the cache directories in storage and
 create symlinks to redirect from the user home area:
