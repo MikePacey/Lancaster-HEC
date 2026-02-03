@@ -31,7 +31,7 @@ A simple serial batch job script for Stata
 ------------------------------------------
 
 The following is an example of a job script which will run 
-stata commands contained in the file filename.do:
+stata commands contained in the file `filename.do`:
 
 .. code-block:: bash
 
@@ -57,7 +57,6 @@ a 4-core stata job can be submitted using the following template:
 
   #SBATCH -p parallel
   #SBATCH --cpus-per-task=4
-  #SBATCH --license=stata
 
   source /etc/profile
   module add stata
@@ -73,45 +72,3 @@ carefully to ensure that requested cores don't go to waste. If your workload par
 to a smaller core count, then the ``--cpus-per-task`` resource request can be changed
 to a smaller value.
 
-Stata-MP8 and Stata-MP16
-------------------------
-
-The HEC also hosts 2 licenses each for the MP8 and MP16 versions 
-of Stata available to researchers in the Econmics Department. 
-These enable parallel stata to use up to 8 or 16 cores 
-respectively. 
-
-For Stata MP8, an example script is:
-
-.. code-block:: bash
-
-  #!/bin/bash
-
-  #SBATCH -p parallel
-  #SBATCH --cpus-per-task=8
-  #SBATCH --license=statamp8
-
-  source /etc/profile
-  module add stata/18-mp8
-
-  stata-mp -b do filename
-
-While for Stata MP16, an example script is:
-
-.. code-block:: bash
-
-  #!/bin/bash
-
-  #SBATCH -p parallel
-  #SBATCH --cpus-per-task=16
-  #SBATCH --license=statamp16
-
-  source /etc/profile
-  module add stata/18-mp16
-
-  stata-mp -b do filename
-
-Note that these versions need the ``--license`` resource request for the approriate
-version to ensure that no more than 2 copies of each are running at once. If all
-licenses are in use, jobs will be held pending until a licence - and the other requested
-resources - are available.
