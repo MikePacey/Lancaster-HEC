@@ -189,7 +189,7 @@ syntax as for serial jobs (e.g. ``--mem=8000M`` ).
 Note also that the above syntax ensures that all job slots for the job
 are on the same node. As a result, the value should never be greater
 than the maximum number of cores on the largest compute node - this is
-currently 64.
+currently 128.
 
 Tips on parallel jobs
 ---------------------
