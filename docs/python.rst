@@ -47,9 +47,10 @@ create symlinks to redirect from the user home area:
 
 .. code-block:: console
 
-  mkdir $global_storage/.cache $global_storage/.conda
+  mkdir $global_storage/.cache $global_storage/.conda $global_storage/.mamba
   ln -s $global_storage/.cache ~/.cache
   ln -s $global_storage/.conda ~/.conda
+  ln -s $global_storage/.mamba ~/.mamba
 
 .. Note::
 
