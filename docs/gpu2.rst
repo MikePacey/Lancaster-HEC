@@ -13,8 +13,8 @@ GPUs (Graphics Processing Units) are a specialist type of computing hardware ori
 Understanding GPU types
 -----------------------
 
-The HEC currently offers four different itypes of GPU of differing ages, and supporting
-different workloads. The different GPUs support different types of floating point arithmetic
+The HEC currently offers four different types of GPU of differing ages, and supporting
+different workloads. The GPUs support floating point arithmetic types
 to different degrees; the older V100 GPUs offer good support for double and single precision (FP64 and FP32),
 the L40 and L40S offer better performance for single precision and lower (ie. FP32, FP16 and below) -
 typically used in Neural Net / LLM workloads - while the small number of H200 GPUs are powerful
@@ -88,7 +88,7 @@ queue. Each queue has different job run-time and per-user GPU limits:
    to fairly schedule longer running jobs.
 
 **Job Priority**: Users who are members of the Observational Astrophysics Group will have access
-to the additional *astro-tier1* and *astro-tier2* groups which give jobs priority access to
+to the additional *astro-tier1* and *astro-tier2* queues which give jobs priority access to
 the L40 GPU nodes they have contributed.  Priority users will be notified
 on account creation that they have access to those priority
 queues. All other users will have access to the *astro* queue which gives access to the L40
@@ -178,16 +178,16 @@ the desired GPU type. The following table lists how to request a single GPU of e
     - GRES line to use in a job scripts
   * - V100
     - gpu-short, gpu-medium, gpu-long
-    - --gres=gpu:tesla_v100-pcie-32gb:1
+    - ``--gres=gpu:tesla_v100-pcie-32gb:1``
   * - H200
     - gpu-short, gpu-medium, gpu-long
-    - --gres=gpu:nvidia_h200_nvl:1
+    - ``--gres=gpu:nvidia_h200_nvl:1``
   * - L40
     - astro
-    - --gres=gpu:nvidia_l40:1
+    - ``--gres=gpu:nvidia_l40:1``
   * - L40S
     - astro
-    - --gres=gpu:nvidia_l40s:1
+    - ``--gres=gpu:nvidia_l40s:1``
 
 Here's an exmaple, using the original nbody GPU job script fropm above, modified to request
 and L40S GPU on the astro queue:
