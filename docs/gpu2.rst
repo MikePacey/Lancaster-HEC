@@ -189,8 +189,8 @@ the desired GPU type. The following table lists how to request a single GPU of e
     - astro
     - ``--gres=gpu:nvidia_l40s:1``
 
-Here's an exmaple, using the original nbody GPU job script fropm above, modified to request
-and L40S GPU on the astro queue:
+Here's an example, using the original *nbody* GPU job script from above, modified to request
+an L40S GPU on the astro queue:
 
 .. code-block:: bash
 
@@ -341,7 +341,7 @@ GPU-capable job script:
 A note on CUDA versions
 -----------------------
 
-The major version number for CUDA broadly correspond to the maximum compute capability level of GPU
+The major version number for CUDA broadly corresponds to the maximum compute capability level of GPU
 they can support. For the L40, L40S and H200 GPU nodes, these all support CUDA applications up to version 13. 
 The older V100 GPU nodes support CUDA applications up to version 12.9 - the V100 GPUs cannot support CUDA 13
 features, so check what level of CUDA your application supports.
@@ -361,7 +361,7 @@ supporting them. Applications which require python libraries such as Tensorflow,
 a wide array of supporting libraries, often with very specific version requirements. As it's not feasible
 to support the combinatorial explosition of library combinations centrally, users are advised to create
 their own software stacks specifically for their own software stacks using tools such as miniforge, conda and mamba.
-Please see :doc:`/software/python` for an brief explanation of how best to use these tools on the HEC.
+Please see :doc:`/python` for an brief explanation of how best to use these tools on the HEC.
 
 GPU Hardware Contributions
 --------------------------
