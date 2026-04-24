@@ -195,7 +195,7 @@ an L40S GPU on the astro queue:
 .. code-block:: bash
 
   #!/bin/bash
-  #SBATCH -p gpu-short
+  #SBATCH -p astro
   #SBATCH --gres=gpu:nvidia_l40s:1
   #SBATCH --mem=10G
   #SBATCH --time=00:10:00
@@ -313,7 +313,8 @@ Compiling CUDA-capable code
 NVidia's CUDA library (available on the HEC as the cuda module) provides the ``nvcc`` 
 compiler for compiling GPU-capable code written in C or C++.
 
-After adding the cuda environment, the compiler can invoked using arguments common to most compilers.
+After adding the cuda environment, the compiler can be invoked using arguments common 
+to most compilers.
 
 For instance, in the Vector Addition example from this `Oak Ridge Leadership Computing Facility 
 tutorial <https://www.olcf.ornl.gov/tutorials/cuda-vector-addition/>`_ the source file vecAdd.cu 
