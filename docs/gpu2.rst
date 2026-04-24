@@ -350,7 +350,7 @@ features, so check what level of CUDA your application supports.
 Further Reading
 ---------------
 
-* The `CUDA main page <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html>`_
+* The `CUDA main page <https://docs.nvidia.com/cuda/>`_
 
 * NVidia's `documentation for the nvcc compiler <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html>`_
 
