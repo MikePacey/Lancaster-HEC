@@ -6,14 +6,99 @@ GPUs (Graphics Processing Units) are a specialist type of computing hardware ori
 .. note:
   Most applications aren't GPU-capable as software must be written specifically to make 
   use of GPU hardware. Check the User Guide for your application to see if it supports
-  GPU use, and whether it support multiple GPUs. When testing a new GPU application be
+  GPU use, and whether it supports multiple GPUs. When testing a new GPU application be
   sure to use the GPU Resource Monitoring advice below to ensure that your application
   is genuinely using a GPU.
+
+Understanding GPU types
+-----------------------
+
+The HEC currently offers four different types of GPU of differing ages, and supporting
+different workloads. The GPUs support floating point arithmetic types
+to different degrees; the older V100 GPUs offer good support for double and single precision (FP64 and FP32),
+the L40 and L40S offer better performance for single precision and lower (ie. FP32, FP16 and below) -
+typically used in Neural Net / LLM workloads - while the small number of H200 GPUs are powerful
+all-rounders. The table below summarizes basic stats for each type:
+
+.. list-table::
+  :header-rows: 1
+
+  * - GPU type
+    - Achitecture
+    - GPU memory
+    - Best used for workloads needing
+  * - V100
+    - Volta
+    - 32 GB
+    - double and single precision (FP64 and FP32)
+  * - H200
+    - Hopper
+    - 141 GB
+    - any precision type, very large models
+  * - L40
+    - Lovelace
+    - 48GB
+    - single precision (LP32) or lower
+  * - L40S
+    - Lovelace
+    - 48GB
+    - single precision (LP32) or lower
+
+GPU queues
+----------
+
+While most GPU jobs will be short, the HEC GPU nodes offer support for a small number
+of longer-running jobs. The GPU nodes are also divided up into separate queues depending on their workloads focus (e.g. strong support for FP64, or strong support of FP32 and below).
+
+The V100 and H200 GPUs are available on three queues: **gpu-short**,
+**gpu-medium** and **gpu-long** while the L40 and L40S GPUs are available on the **astro**
+queue. Each queue has different job run-time and per-user GPU limits:
+
+.. list-table::
+  :header-rows: 1
+
+  * - Queue name
+    - Time limit
+    - GPU types
+    - Max # of GPUs per user
+  * - gpu-short
+    - 12 hours
+    - V100 and H200
+    - Unlimited
+  * - gpu-medium
+    - 48 hours
+    - V100 and H200
+    - 6
+  * - gpu-long
+    - 7 days
+    - V100 and H200
+    - 2
+  * - astro
+    - 24 hours
+    - L40 and L40S
+    - 15
+
+.. note::
+
+   GPU jobs have a maximum runtime, dependent on the queue they are submitted to,
+   as described in the table above.
+   It is *strongly* recommend to use an accurate **--time=** resource request as
+   this helps with scheduling jobs on the small number of GPUs available. Longer
+   jobs will stay pending for longer, as it's more difficult for the job scheduler
+   to fairly schedule longer running jobs.
+
+**Job Priority**: Users who are members of the Observational Astrophysics Group will have access
+to the additional *astro-tier1* and *astro-tier2* queues which give jobs priority access to
+the L40 GPU nodes they have contributed.  Priority users will be notified
+on account creation that they have access to those priority
+queues. All other users will have access to the *astro* queue which gives access to the L40
+and L40S GPU nodes which uses the same job FairShare system as the rest of the HEC.
+
 
 Example of a batch GPU job script
 ---------------------------------
 
-The following job will run the CUDA **nbody** demo application as a benchmark on two GPUs:
+The following job will run the CUDA **nbody** demo application as a benchmark on a GPU:
 
 .. code-block:: bash
 
@@ -32,7 +117,7 @@ The following job will run the CUDA **nbody** demo application as a benchmark on
 .. note::
 
   Not all applications will automatically detect how many GPUs should be used.
-  Specifying whether to use GPUs, and how may to use, varies widely
+  Specifying whether to use GPUs - and how many to use - varies widely
   between applications. In the above example the command line argument *-numdevices=*
   needs to be added to the **nbody** demo application. Refer to your application's User 
   Guide for details on the correct syntax to use.
@@ -54,7 +139,7 @@ GPU's memory is made available to the job automatically.
   Take care when requesting CPU and (main) memory resource in GPU jobs, as claiming too much of either
   will result in little (or no) resource for other GPU jobs on the same node. If a job's performance
   is significantly increased by large amounts of CPU resource, it's likely that the application is not
-  making good use of the GPU and would best run as a CPU-only job.
+  making good use of the GPU and would best run as a CPU-only job on the serial or parallel queues.
 
 Multi-node GPU jobs
 -------------------
@@ -75,65 +160,51 @@ The following example requests all (3) GPUs on 2 nodes:
   # Job command here
 
 Note that such jobs will need some mechanism to launch across multiple nodes, such as MPI's
-``mpirun``. Refer to the user guide for your application to learn if and how multi-node / distributed
+``mpirun``. Refer to the User Guide for your application to learn if and how multi-node / distributed
 computing GPU workloads are supported.
 
+Requesting specific GPU types
+-----------------------------
 
-
-GPU Queues
-----------
-
-While most GPU jobs will be short, the HEC GPU nodes offer support for a small number 
-of longer-running jobs. There are three different queues for GPU jobs: **gpu-short**, 
-**gpu-medium** and **gpu-long**, with different limitations:
+With different cards within the same queue offering different capabilities, users can opt to request
+a specific gpu type. This can be done by modifying the ``--gres=gpu`` resource request to include
+the desired GPU type. The following table lists how to request a single GPU of each GPU type:
 
 .. list-table::
   :header-rows: 1
 
-  * - Queue name
-    - Time limit
-    - Max # of GPUs per user
-  * - gpu-short
-    - 12 hours
-    - Unlimited
-  * - gpu-medium
-    - 48 hours
-    - 6
-  * - gpu-long
-    - 7 days
-    - 2
-  * - astro
-    - 24 hours
-    - 4
+  * - GPU type
+    - Available on queues
+    - GRES line to use in a job scripts
+  * - V100
+    - gpu-short, gpu-medium, gpu-long
+    - ``--gres=gpu:tesla_v100-pcie-32gb:1``
+  * - H200
+    - gpu-short, gpu-medium, gpu-long
+    - ``--gres=gpu:nvidia_h200_nvl:1``
+  * - L40
+    - astro
+    - ``--gres=gpu:nvidia_l40:1``
+  * - L40S
+    - astro
+    - ``--gres=gpu:nvidia_l40s:1``
 
-.. note::
+Here's an example, using the original *nbody* GPU job script from above, modified to request
+an L40S GPU on the astro queue:
 
-   GPU jobs have a maximum runtime, dependent on the queue they are submitted to,
-   as described in the table above.
-   It is *strongly* recommend to use an accurate **--time=** resource request as
-   this helps with scheduling jobs on the small number of GPUs available. Longer
-   jobs will stay pending for longer, as it's more difficult for the job scheduler
-   to fairly schedule longer running jobs.
+.. code-block:: bash
 
-A Note on the Astro Queues
---------------------------
+  #!/bin/bash
+  #SBATCH -p astro
+  #SBATCH --gres=gpu:nvidia_l40s:1
+  #SBATCH --mem=10G
+  #SBATCH --time=00:10:00
+  #SBATCH --cpus-per-task=1
 
-The *astro*, *astro-tier1* and *astro-tier2* queues are attached to two GPU nodes offering
-4 x NVidia L40 GPU cards each. These more specialist GPUs are generally available to all
-HEC users with the following caveats:
+  source /etc/profile
+  module add cuda/13.2
 
-**Performance**: The L40 GPUs perform better than the V100 GPUs for single- and half-precision
-floating point arithemetic, making them suitable for many machine learning tasks.
-However, they perform notably worse for double precision. Before submitting
-jobs to this queue make sure that your application doesn't use double precision as it
-will run much more slowly than on the V100s on the gpu- queues.
-
-**Priority**: When the queue becomes busy, priority will be given to jobs belonging
-to researchers associated with the Research Groups that contributed these nodes. Non-priority jobs
-may experience longer wait times during busy periods. Priority users will be notified
-on account creation that they have access to the *astro-tier1* or *astro-tier2* priority
-queues. All other users will have access to the *astro* queue.
-
+  nbody -benchmark -numbodies=2500000 -numdevices=1
 
 GPU resource monitoring
 -----------------------
@@ -142,7 +213,8 @@ GPU jobs on the HEC are logged using NVidia's Data Centre GPU Manager
 suite, which summarises how much GPU resource is used by each job on
 a per-GPU level. The logging is intended to highlight cases
 where jobs make very little - or no - use of GPU resource, which indicates
-that they would be better run as CPU-only jobs. The usage data is appended
+that they would be better run as CPU-only jobs on the serial or parallel
+queues. The usage data is appended
 to the end of each jobs's *stdout* file. An example for the **nbody** example job above 
 would be:
 
@@ -241,7 +313,8 @@ Compiling CUDA-capable code
 NVidia's CUDA library (available on the HEC as the cuda module) provides the ``nvcc`` 
 compiler for compiling GPU-capable code written in C or C++.
 
-After adding the cuda environment, the compiler can invoked using arguments common to most compilers.
+After adding the cuda environment, the compiler can be invoked using arguments common 
+to most compilers.
 
 For instance, in the Vector Addition example from this `Oak Ridge Leadership Computing Facility 
 tutorial <https://www.olcf.ornl.gov/tutorials/cuda-vector-addition/>`_ the source file vecAdd.cu 
@@ -266,17 +339,30 @@ GPU-capable job script:
 
   ./vector_add
 
-Further Reading:
+A note on CUDA versions
+-----------------------
 
-* The `CUDA main page <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html>`_
+The major version number for CUDA broadly corresponds to the maximum compute capability level of GPU
+they can support. For the L40, L40S and H200 GPU nodes, these all support CUDA applications up to version 13. 
+The older V100 GPU nodes support CUDA applications up to version 12.9 - the V100 GPUs cannot support CUDA 13
+features, so check what level of CUDA your application supports.
+
+Further Reading
+---------------
+
+* The `CUDA main page <https://docs.nvidia.com/cuda/>`_
 
 * NVidia's `documentation for the nvcc compiler <https://docs.nvidia.com/cuda/cuda-compiler-driver-nvcc/index.html>`_
 
 GPU-enabled Machine Learning Libraries
 --------------------------------------
 
-For GPU-enabled versions of several Python libraries including Tensorflow,
-keras and Torch, see :doc:`/software/opence`
+The popularity of Machine Learning-based applications has created something of a Wild West of libraries
+supporting them. Applications which require python libraries such as Tensorflow, Keras and Torch usually need
+a wide array of supporting libraries, often with very specific version requirements. As it's not feasible
+to support the combinatorial explosition of library combinations centrally, users are advised to create
+their own software stacks specifically for their own software stacks using tools such as miniforge, conda and mamba.
+Please see :doc:`/python` for an brief explanation of how best to use these tools on the HEC.
 
 GPU Hardware Contributions
 --------------------------
@@ -296,19 +382,13 @@ The HEC currently offers the following GPU nodes:
     - 3
     - 32
     - 192G
-    - 1
-    - HEP Research Group
-  * - NVidia V100 32GB
-    - 3
-    - 32
-    - 192G
-    - 1
-    - CHICAS Research Group
-  * - NVidia V100 32GB	
-    - 3
-    - 32
-    - 192G
-    - 6
+    - 8
+    - HEP Research Group (1), CHICAS Research Group (1), Maths and Stats Dept (6)
+  * - NVidia H200 141GB
+    - 2
+    - 48
+    - 512G
+    - 2
     - Maths and Stats Dept
   * - NVidia L40 48G
     - 4
@@ -316,3 +396,9 @@ The HEC currently offers the following GPU nodes:
     - 512G
     - 2
     - Observational Astrophysics Group
+  * - Nvidia L40S 48G
+    - 3
+    - 32
+    - 512G
+    - 5
+    - Central University funding
