@@ -31,12 +31,12 @@ Where *type* is one of the following:
     - Interconnect
   * - 10Geth64G
     - 16
-    - Intel Ivy Bridge, Haswell or Broadwell
+    - Intel Broadwell
     - 64G
     - 10Gb low latency
   * - 10GethAny
     - 16
-    - Intel Ivy Bridge, Haswell or Broadwell
+    - Intel Broadwell
     - 64G
     - 10Gb low latency
   * - 40core192G
@@ -46,7 +46,7 @@ Where *type* is one of the following:
     - 25Gb low latency
   * - 64core256G
     - 64
-    - Intel Ice Lake
+    - Intel Ice Lake or Emerald Rapids
     - 256G
     - 25Gb low latency
   * - 128core512G
