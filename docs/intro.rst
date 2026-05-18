@@ -9,8 +9,8 @@ Virtual Desktops (mydesktop and mylab).
 
 The service combines what was the previously separately supported services for
 local high performance computing (HPC) users and the local High Energy Physics
-research group (GridPP). The combined facility offers 16,000 cores, 71TB of
-aggregate memory, 24 NVidia V100 GPUs, 8 NVidia L40 GPUs, 230TB of GPFS-based 
+research group (GridPP). The combined facility offers 17,500 cores, 57TB of
+aggregate memory, a range of NVidia GPUs, 230TB of GPFS-based 
 filestore for general use and 10PB of Ceph-based filestore for GridPP data.  
 
 The cluster operating system is Rocky Linux 8, with job submission handled by
