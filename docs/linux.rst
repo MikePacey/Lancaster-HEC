@@ -7,7 +7,7 @@ cluster. For departments that don't offer their own Linux
 training courses, here are some pointers for online learning 
 material:
 
-* `Introduction to Linux by Lancaster University's Robin Long <https://robinlong-tutorials-linux.readthedocs.io/en/latest/introduction.html>`_
+* `Introduction to Linux by UKCEH Lancaster's Robin Long <https://robinlong-tutorials-linux.readthedocs.io/en/latest/introduction.html>`_
 
 * `Search for Linux books using the Lancaster University Library OneSearch facility <http://www.lancaster.ac.uk/library/>`_
 
