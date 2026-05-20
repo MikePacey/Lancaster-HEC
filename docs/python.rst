@@ -71,7 +71,10 @@ Accessing conda or mamba on the HEC
 
 Both conda and mamba are available via the centrally installed
 module *miniforge*, so you won't need to install it yourself.
-To access it, use the command ``module add miniforge``.
+To access it, use the command 
+
+``module add miniforge``
+
 Once the module has been added, you can use it to create new virtual
 environments, access existing onesi, and install python libraries into them.
 
