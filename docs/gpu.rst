@@ -371,6 +371,7 @@ The HEC currently offers the following GPU nodes:
 
 .. list-table::
   :header-rows: 1
+  :class: tight-table
 
   * - GPU type
     - # GPUs
