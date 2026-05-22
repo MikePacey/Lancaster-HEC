@@ -73,4 +73,4 @@ pygments_style = 'sphinx'
 
 # Allow for wider tables
 
-python html_css_files = ['custom.css']
+html_css_files = ['custom.css']
