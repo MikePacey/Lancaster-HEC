@@ -7,7 +7,7 @@ Login and data transfer
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | *ssh USERNAME@wayland.hec.lancs.ac.uk*                        | login from a linux desktop                                               |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| scp /path/to/my/file USERNAME@wayland.hec.lancs.ac.uk         | upload a file to the HEC from a                                          |
+| *scp /path/to/my/file USERNAME@wayland.hec.lancs.ac.uk*       | upload a file to the HEC from a                                          |
 |                                                               | linux desktop                                                            |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | scp -r /path/to/my/directory USERNAME@wayland.hec.lancs.ac.uk | upload a directory to the HEC from a linux desktop                       |
