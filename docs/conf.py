@@ -70,3 +70,6 @@ html_logo = 'logo-lancs.png'
 master_doc = 'index'
 
 pygments_style = 'sphinx'
+
+def setup(app):
+   app.add_stylesheet('css/custom.css')
