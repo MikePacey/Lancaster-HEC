@@ -369,10 +369,9 @@ GPU Hardware Contributions
 
 The HEC currently offers the following GPU nodes:
 
-v6 test
+v7 test
 
 .. list-table::
-  :widths: 20 10 10 15 20 20
   :header-rows: 1
   :class: tight-table
 
