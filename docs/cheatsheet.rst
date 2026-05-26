@@ -32,18 +32,33 @@ Note: In a job script, job option lines start with #SBATCH
 
 .. list-table::
 
-  * - *-p QUEUENAME*
-    - submit job to *QUEUENAME* - e.g., serial, parallel, test, astro
-  * - *-\-mem=SIZE*
-    - request *SIZE* memory for a job
+  * - *-p serial*
+
+      -\-mem=SIZE*
+
+    - a serial job requesting *SIZE* memory (eg. 1G = 1 gigabyte)
 
 .. list-table::
 
-  * - -\-nodes=N
+  * - -p parallel
+
+      -\-cpus-per-task=N
+
+      -\-mem=SIZE
+
+    -  a parallel jobs with N cores on the same compute node, and SIZE memory
+
+.. list-table::
+
+  * - -p parallel
+
+      -\-nodes=N
 
       -\-exclusive
 
       -\-node_type=NODETYPE
+
+    - a parallel job requesting N nodes of type NODETYPE
 
 Job Monitoring
 --------------
