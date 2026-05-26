@@ -21,9 +21,9 @@ Job Submission
 .. list-table::
 
   * - *sbatch JOBSCRIPT*
-    - submit JOBSCRIPT as a batch job job
+    - submit JOBSCRIPT as a :ref:`batch job<batch jobs>`
   * - *srun -\-pty bash -i*
-    - submit an interactive job
+    - submit an :ref:`interactive job<interactive jobs>`
 
 Job Submission Options
 ----------------------

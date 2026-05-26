@@ -28,6 +28,8 @@ of job data and compilation.
 Batch jobs
 ----------
 
+.. _batch jobs:
+
 A batch job is one which can be run without user intervention 
 - i.e. it does not require any input from the keyboard and does 
 not send any output to the user's screen. Typically a batch 
@@ -169,6 +171,8 @@ E.g. a job named *myjob* with a job ID of 1234 will create two job output files 
 
 Interactive jobs
 ----------------
+
+.. _interactive jobs:
 
 While batch jobs are the most efficient type of job to submit, 
 some applications may require regular user input making them 
