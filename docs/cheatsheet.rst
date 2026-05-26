@@ -54,7 +54,7 @@ Note: In a job script, job option lines start with #SBATCH
 
       -\-node_type=NODETYPE
 
-    - a parallel job requesting N nodes of compute node type :ref:`NODETYPE<node type>`
+    - a parallel job requesting N nodes of compute node type :ref:`NODETYPE<node types>`
 
 Job Monitoring
 --------------
