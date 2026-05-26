@@ -40,7 +40,9 @@ Note: In a job script, job option lines start with #SBATCH
 .. list-table::
 
   * - -\-nodes=N
+
       -\-exclusive
+
       -\-node_type=NODETYPE
 
 Job Monitoring
