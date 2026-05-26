@@ -22,7 +22,7 @@ Job Submission
 
   * - *sbatch JOBSCRIPT*
     - submit JOBSCRIPT as a batch job job
-  * - *srun --pty bash -i*
+  * - *srun -\-pty bash -i*
     - submit an interactive job
 
 Job Submission Options
@@ -34,14 +34,14 @@ Note: In a job script, job option lines start with #SBATCH
 
   * - *-p QUEUENAME*
     - submit job to *QUEUENAME* - e.g., serial, parallel, test, astro
-  * - *--mem=SIZE*
+  * - *-\-mem=SIZE*
     - request *SIZE* memory for a job
 
 .. list-table::
 
-  * - --nodes=N
-      --exclusive
-      --node_type=NODETYPE
+  * - -\-nodes=N
+      -\-exclusive
+      -\-node_type=NODETYPE
 
 Job Monitoring
 --------------
