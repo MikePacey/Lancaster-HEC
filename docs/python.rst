@@ -112,7 +112,7 @@ Additional libraries can then be installed with the command ``mamba install pack
    ``module add`` and ``source activate`` commands described above.
 
 GPU enabled python libraries
-============================
+----------------------------
 
 Some python libraries offer GPU support, but it may be necessary to use different channels to
 install these as the default conda-forge channel will often supply CPU-only versions.
@@ -124,6 +124,6 @@ environment has been activated:
 
 
 Further Reading
-===============
+---------------
 
 * `Managing Conda <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`_ - note that mamba is a drop in replacement for conda, with compatable commands to conda
