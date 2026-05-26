@@ -36,6 +36,9 @@ Note: In a job script, job option lines start with #SBATCH
     - submit job to *QUEUENAME* - e.g., serial, parallel, test, astro
   * - *--mem=SIZE*
     - request *SIZE* memory for a job
+
+.. list-table::
+
   * - --nodes=N
       --exclusive
       --node_type=NODETYPE
