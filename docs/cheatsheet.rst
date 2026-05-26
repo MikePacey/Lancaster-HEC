@@ -15,13 +15,14 @@ Login and data transfer
 | smbclient -k -D folder-path //luna/faculty-code               | Connect to research folder on LUNA. User put and get to upload/download  |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-Test tight table
+Test 8
 
-.. list-table:: Comparison
-   :class: tight-table   
+.. list-table::
+  :class: tight-table
  
-   * - *scp -r /path/to/my/directory USERNAME@wayland.hec.lancs.ac.uk*
-     -  upload a directory to the HEC from a linux desktop 
-   * - *scp -r /path/to/my/directory USERNAME@wayland.hec.lancs.ac.uk*
-     - upload a directory to the HEC from a linux desktop
-   * - *smbclient -k -D folder-path //luna/faculty-code(
+  * - *scp -r /path/to/my/directory USERNAME@wayland.hec.lancs.ac.uk*
+    -  upload a directory to the HEC from a linux desktop 
+  * - *scp -r /path/to/my/directory USERNAME@wayland.hec.lancs.ac.uk*
+    - upload a directory to the HEC from a linux desktop
+  * - *smbclient -k -D folder-path //luna/faculty-code
+    - Connect to research folder on LUNA. User put and get to upload/download

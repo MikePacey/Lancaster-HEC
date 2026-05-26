@@ -56,7 +56,6 @@ Contents
    software/lammps
    software/matlab
    software/namd
-   software/opence
    python
    software/r
    software/stata
