@@ -15,10 +15,9 @@ Login and data transfer
 | smbclient -k -D folder-path //luna/faculty-code               | Connect to research folder on LUNA. User put and get to upload/download  |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-Test 8
+Test 9
 
 .. list-table::
-  :class: tight-table
  
   * - *ssh USERNAME@wayland.hec.lancs.ac.uk*
     - login from a linux desktop
