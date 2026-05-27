@@ -28,8 +28,6 @@ of job data and compilation.
 Batch jobs
 ----------
 
-.. _batch jobs:
-
 A batch job is one which can be run without user intervention 
 - i.e. it does not require any input from the keyboard and does 
 not send any output to the user's screen. Typically a batch 
