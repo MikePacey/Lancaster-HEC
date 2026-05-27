@@ -25,6 +25,8 @@ of job data and compilation.
   If you need to run small tests on jobs before submitting them, 
   please use either the test queue or an interactive job session.
 
+.. _batch jobs:
+
 Batch jobs
 ----------
 

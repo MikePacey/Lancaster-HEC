@@ -21,7 +21,7 @@ Job Submission
 .. list-table::
 
   * - *sbatch JOBSCRIPT*
-    - submit file *JOBSCRIPT* as a :ref:`batch job<Batch jobs>`
+    - submit file *JOBSCRIPT* as a :ref:`batch jobs`
   * - *srun -\-pty bash -i*
     - submit an :ref:`interactive job<interactive jobs>`
 
