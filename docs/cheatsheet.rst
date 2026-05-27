@@ -21,7 +21,7 @@ Job Submission
 .. list-table::
 
   * - *sbatch JOBSCRIPT*
-    - submit JOBSCRIPT as a :ref:`batch job<batch jobs>`
+    - submit file *JOBSCRIPT* as a :ref:`batch job<batch jobs>`
   * - *srun -\-pty bash -i*
     - submit an :ref:`interactive job<interactive jobs>`
 
@@ -59,4 +59,15 @@ Note: In a job script, job option lines start with #SBATCH
 Job Monitoring
 --------------
 
+.. list-table::
 
+  * - *squeue --me*
+    - Shows all :ref:`running and pending jobs<squeue>`
+  * - *qcgtop -u USERNAME*
+    - Shows :ref:`CPU and memeory usage summaries<qcgtop>` for all running jobs
+  * - *qtop -u USERNAME*
+    - Shows :ref:`top-style information<qtop>` on all running jobs
+  * - *qquota*
+    - Shows :ref:`job resource quotas<qquota>` (CPUs, memory and GPUs)
+  * - *qacct -j JOBID*
+    - Shows :ref:`summary of completed<qacct>` job JOBID

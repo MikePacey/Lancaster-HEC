@@ -4,6 +4,8 @@ Monitoring jobs on the HEC
 Viewing job state, or: Is my job running yet?
 ---------------------------------------------
 
+.. _squeue:
+
 The most basic type of job monitoring is to check the job's current
 *state*, ie is it running, completed or still pending?
 
@@ -141,6 +143,8 @@ it will then run for a few seconds, complete, and email you.
 Viewing your job resource quota with qquota
 -------------------------------------------
 
+.. _qquota:
+
 To ensure a fair share of the cluster, each user is capped by a set of 
 *resource quotas* implemented using SLURM's QoS (Quality of Service) 
 feature. Jobs submitted to the cluster are eligible to run provided 
@@ -235,6 +239,8 @@ the job state of CANCELLED).
 Job summaries via qacct
 #######################
 
+.. _qacct:
+
 The ``qacct`` command acts as a wrapper to ``sacct`` and extracts 
 only key job information. Using the previous job as an example, 
 we can run:
@@ -280,6 +286,8 @@ and ``qtop`` can help with this monitoring.
 Monitoring jobs with qcgtop
 ###########################
 
+.. _qcgtop:
+
 The ``qcgtop`` command will show a summary of current CPU and memory
 usage for your jobs. Each Slurm job is managed by a Linux *control
 group*, which on a typical Linux desktop or server can be viewed via
@@ -315,6 +323,8 @@ is the expected value for parallel jobs fully utilising all CPUs on a
 
 Monitoring jobs with qtop
 #########################
+
+.. _qtop:
 
 While the ``qcgtop`` tool described above provides an overall summary
 of each jobs' CPU and memory usage, it doesn't provide a breakdown of
