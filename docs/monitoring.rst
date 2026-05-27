@@ -1,10 +1,10 @@
 Monitoring jobs on the HEC
 ==========================
 
+.. _squeue:
+
 Viewing job state, or: Is my job running yet?
 ---------------------------------------------
-
-.. _squeue:
 
 The most basic type of job monitoring is to check the job's current
 *state*, ie is it running, completed or still pending?
@@ -139,11 +139,10 @@ is the job ID of the job array. This will cause the dummy job to wait until
 all elements of the specified job array have finished before it runs - 
 it will then run for a few seconds, complete, and email you.
 
+.. _qquota:
 
 Viewing your job resource quota with qquota
 -------------------------------------------
-
-.. _qquota:
 
 To ensure a fair share of the cluster, each user is capped by a set of 
 *resource quotas* implemented using SLURM's QoS (Quality of Service) 
@@ -236,10 +235,10 @@ memory resource request should be have been lower. (Note that the job was
 manually stopped via the scancel command after half an hour, hence 
 the job state of CANCELLED).
 
+.. _qacct:
+
 Job summaries via qacct
 #######################
-
-.. _qacct:
 
 The ``qacct`` command acts as a wrapper to ``sacct`` and extracts 
 only key job information. Using the previous job as an example, 
@@ -282,11 +281,10 @@ running any new type of workload - either a new application, or a
 different model within an existing application. The commands ``qcgtop``
 and ``qtop`` can help with this monitoring.
 
+.. _qcgtop:
 
 Monitoring jobs with qcgtop
 ###########################
-
-.. _qcgtop:
 
 The ``qcgtop`` command will show a summary of current CPU and memory
 usage for your jobs. Each Slurm job is managed by a Linux *control
@@ -321,10 +319,10 @@ node.  The CPU usage reported in this example is close to 1600%, which
 is the expected value for parallel jobs fully utilising all CPUs on a
 16-core compute node.
 
+.. _qtop:
+
 Monitoring jobs with qtop
 #########################
-
-.. _qtop:
 
 While the ``qcgtop`` tool described above provides an overall summary
 of each jobs' CPU and memory usage, it doesn't provide a breakdown of
