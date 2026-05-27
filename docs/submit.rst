@@ -169,10 +169,10 @@ E.g. a job named *myjob* with a job ID of 1234 will create two job output files 
    write data to other files - check the user guide for your specific application for
    the details.
 
+.. _interactive jobs:
+
 Interactive jobs
 ----------------
-
-.. _interactive jobs:
 
 While batch jobs are the most efficient type of job to submit, 
 some applications may require regular user input making them 
