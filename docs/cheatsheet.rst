@@ -72,7 +72,15 @@ Job Type Templates
 .. list-table::
 
   * - one
-    - two 
+    - two
+
+.. list-table::
+
+  * - .. code-block:: console
+
+         Line One
+         Line Two
+    - comment
 
 .. list-table::
 
