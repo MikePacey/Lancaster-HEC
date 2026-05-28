@@ -44,30 +44,30 @@ Note: In a job script, job option lines start with #SBATCH
   * - .. code-block:: console
 
          -p serial
-         -\-mem=SIZE
+         --mem=SIZE
     - a :ref:`serial job<serial job>` requesting *SIZE* memory (eg. 1G = 1 gigabyte)
 
   * - .. code-block:: console
 
          -p parallel
-         -\-cpus-per-task=N
-         -\-mem=SIZE
+         --cpus-per-task=N
+         --mem=SIZE
     -  a :ref:`single node parallel job<open mp>` with N cores on the same compute node, and SIZE memory
 
   * - .. code-block:: console
 
          -p parallel
-         -\-nodes=N
-         -\-exclusive
+         --nodes=N
+         --exclusive
          -C node_type=X
     - a :ref:`multi node parallel job<mpi jobs>` requesting N nodes of compute node type :ref:`X<node types>`
 
   * - .. code-block:: console
 
          -p gpu-short
-         -\-gres=gpu:1
-         -\-mem=SIZE
-         -\-cpus-per-task=N
+         --gres=gpu:1
+         --mem=SIZE
+         --cpus-per-task=N
     - submit a :ref:`gpu job<gpu jobs>` to the gpu-short queue, requesting N cores, SIZE memory and a single GPU
 
 Table v2
