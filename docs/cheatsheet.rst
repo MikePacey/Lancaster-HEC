@@ -83,22 +83,22 @@ Job Type Templates
     - a :ref:`serial job<serial job>` requesting *SIZE* memory (eg. 1G = 1 gigabyte)
   * - .. code-block:: console
 
-         #SBATCH -p parallel
-         #SBATCH --cpus-per-task=N
-         #SBATCH --mem=SIZE
+         -p parallel
+         --cpus-per-task=N
+         --mem=SIZE
     -  a :ref:`single node parallel job<open mp>` with N cores on the same compute node, and SIZE memory
   * - .. code-block:: console
 
-         #SBATCH -p parallel
-         #SBATCH --nodes=N
-         #SBATCH --exclusive
-         #SBATCH -C node_type=X
+         -p parallel
+         --nodes=N
+         --exclusive
+         -C node_type=X
    - a :ref:`multi node parallel job<mpi jobs>` requesting N nodes of compute node type :ref:`X<node types>`
   * - .. code-block:: console
 
-         #SBATCH -p gpu-short
-         #SBATCH --gres=gpu:1
-         #SBATCH --mem=SIZE
-         #SBATCH --cpus-per-task=N
+         -p gpu-short
+         --gres=gpu:1
+         --mem=SIZE
+         --cpus-per-task=N
     - submit a :ref:`gpu job<gpu jobs>` to the gpu-short queue, requesting N cores, SIZE memory and a single GPU
 
