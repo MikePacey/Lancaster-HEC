@@ -59,9 +59,9 @@ Note: In a job script, job option lines start with #SBATCH
 
       -\-exclusive
 
-      -\-node_type=NODETYPE
+      -\-node_type=TYPE
 
-    - a :ref:`multi node parallel job<mpi jobs>` requesting N nodes of compute node type :ref:`NODETYPE<node types>`
+    - a :ref:`multi node parallel job<mpi jobs>` requesting N nodes of compute node type :ref:`TYPE<node types>`
 
   * - -p gpu-short
 
