@@ -65,11 +65,11 @@ Note: In a job script, job option lines start with #SBATCH
 
   * - -p gpu-short
 
-       -\-gres=gpu:1
+      -\-gres=gpu:1
 
-       -\-mem=SIZE
+      -\-mem=SIZE
 
-       -\-cpus-per-task=N
+      -\-cpus-per-task=N
 
     - submit a :ref:`gpu job<gpu jobs>` to the gpu-short queue, requesting N cores, SIZE memory and a single GPU
 
