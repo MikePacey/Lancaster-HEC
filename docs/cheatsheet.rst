@@ -71,10 +71,15 @@ Job Type Templates
 
 .. list-table::
 
+  * - one
+    - two 
+
+.. list-table::
+
   * - .. code-block:: console
 
-         #SBATCH -p serial
-         #SBATCH --mem=SIZE
+         -p serial
+         --mem=SIZE
     - a :ref:`serial job<serial job>` requesting *SIZE* memory (eg. 1G = 1 gigabyte)
   * - .. code-block:: console
 
