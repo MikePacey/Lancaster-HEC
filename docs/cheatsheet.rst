@@ -38,6 +38,7 @@ Job Submission Options
 Note: In a job script, job option lines start with #SBATCH
 
 .. list-table::
+   :widths: 30 70 
 
   * - *-p serial*
 
