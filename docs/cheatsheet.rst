@@ -31,6 +31,8 @@ Job Submission
     - submit file *JOBSCRIPT* as a :ref:`batch job<batch jobs>`
   * - *srun -\-pty bash -i*
     - submit an :ref:`interactive job<interactive jobs>`
+  * - *scancel JOBID*
+    - cancel job number JOBID
 
 Job Submission Options
 ----------------------
@@ -38,7 +40,7 @@ Job Submission Options
 Note: In a job script, job option lines start with #SBATCH
 
 .. list-table::
-   :widths: 1 2
+   :widths: 15 10
 
   * - *-p serial*
 
