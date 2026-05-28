@@ -47,11 +47,11 @@ Note: In a job script, job option lines start with #SBATCH
 
     - a :ref:`serial job<serial job>` requesting *SIZE* memory (eg. 1G = 1 gigabyte)
 
-  * - `-p parallel`
+  * - .. code-block:: console
 
-      `-\-cpus-per-task=N`
-
-      `-\-mem=SIZE`
+         -p parallel
+         -\-cpus-per-task=N
+         -\-mem=SIZE
 
     -  a :ref:`single node parallel job<open mp>` with N cores on the same compute node, and SIZE memory
 
