@@ -71,19 +71,6 @@ Job Type Templates
 
 .. list-table::
 
-  * - one
-    - two
-
-.. list-table::
-
-  * - .. code-block:: console
-
-         Line One
-         Line Two
-    - comment
-
-.. list-table::
-
   * - .. code-block:: console
 
          -p serial
@@ -107,7 +94,7 @@ Job Type Templates
          --nodes=N
          --exclusive
          -C node_type=X
-   - a :ref:`multi node parallel job<mpi jobs>` requesting N nodes of compute node type :ref:`X<node types>`
+    - a :ref:`multi node parallel job<mpi jobs>` requesting N nodes of compute node type :ref:`X<node types>`
 
 .. list-table::
 
