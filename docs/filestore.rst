@@ -1,6 +1,8 @@
 Using Filestore on the HEC
 ==========================
 
+.. _filestore:
+
 Overview of filestore
 ---------------------
 
@@ -230,6 +232,8 @@ There are several applications which support this. One such application is
   mode* in order to avoid problems caused by format differences between Unix 
   and Windows text files. Binary files (i.e. files whose contents are not 
   solely ASCII text) should be transferred in *binary mode*.
+
+.. _smbclient:
 
 Transferring files to the HEC from Luna or other smb-compliant services
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

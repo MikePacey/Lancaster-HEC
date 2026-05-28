@@ -1,19 +1,26 @@
-Quick Reference (Cheat Sheets)
+Quick Reference (Cheat Sheet)
 ==============================
 
-Login and data transfer
------------------------
+.. note::
+
+   This page is a quick reference guide to be used once you are familiar 
+   the HEC User Guide
+
+Login, filesotre and data transfer
+----------------------------------
 
 .. list-table::
  
   * - *ssh USERNAME@wayland.hec.lancs.ac.uk*
     - login from a linux desktop
+  * - *gpfsquota*
+    - show usage for for HEC :ref:`filestores<filestores>`
   * - *scp -r /path/to/my/directory USERNAME@wayland.hec.lancs.ac.uk*
     -  upload a directory to the HEC from a linux desktop 
   * - *scp -r /path/to/my/directory USERNAME@wayland.hec.lancs.ac.uk*
     - upload a directory to the HEC from a linux desktop
   * - *smbclient -k -D folder-path //luna/faculty-code*
-    - connect to research folder on LUNA. User put and get to upload/download
+    - :ref:`connect to a research folder<smbclient>` on LUNA. Use put and get to upload/download
 
 Job Submission
 --------------
@@ -56,12 +63,22 @@ Note: In a job script, job option lines start with #SBATCH
 
     - a parallel job requesting N nodes of compute node type :ref:`NODETYPE<node types>`
 
+  * - -p gpu-short
+
+       -\-gres=gpu:1
+
+       -\-mem=SIZE
+
+       -\-cpus-per-task=N
+
+    - submit a :ref:`gpu job<gpu jobs>` to the gpu-short queue, requesting N cores, SIZE memory and a single GPU
+
 Job Monitoring
 --------------
 
 .. list-table::
 
-  * - *squeue --me*
+  * - *squeue -\-me*
     - Shows all :ref:`running and pending jobs<squeue>`
   * - *qcgtop -u USERNAME*
     - Shows :ref:`CPU and memeory usage summaries<qcgtop>` for all running jobs
@@ -71,3 +88,19 @@ Job Monitoring
     - Shows :ref:`job resource quotas<qquota>` (CPUs, memory and GPUs)
   * - *qacct -j JOBID*
     - Shows :ref:`summary of completed<qacct>` job JOBID
+
+Enviroment Modules
+------------------
+
+.. list-table::
+
+  * - *module avail*
+    - show all :ref:`modules<envmods>`
+  * - *module av PATTERN*
+    - show available :ref:`modules<envmods>` matching PATTERN
+  * - *module add MODULENAME*
+    - add MODULENAME to the current shell environment
+  * - *module rm MODULENAME*
+    - remove MODULENAME from the current shell environment
+  * - *module purge*
+    - remove all :ref:`modules<envmods>` from the current environment

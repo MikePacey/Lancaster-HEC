@@ -1,3 +1,5 @@
+.. _gpu jobs:
+
 GPU Jobs
 ========
 
