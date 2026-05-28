@@ -1,3 +1,5 @@
+.. mpi jobs:
+
 Message Passing Interface (MPI) parallel jobs
 =============================================
 

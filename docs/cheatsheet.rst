@@ -43,7 +43,7 @@ Note: In a job script, job option lines start with #SBATCH
 
       -\-mem=SIZE*
 
-    - a serial job requesting *SIZE* memory (eg. 1G = 1 gigabyte)
+    - a :ref:`serial job<serial job>` requesting *SIZE* memory (eg. 1G = 1 gigabyte)
 
   * - -p parallel
 
@@ -51,7 +51,7 @@ Note: In a job script, job option lines start with #SBATCH
 
       -\-mem=SIZE
 
-    -  a parallel job with N cores on the same compute node, and SIZE memory
+    -  a :ref:`single node parallel job<open mp>` with N cores on the same compute node, and SIZE memory
 
   * - -p parallel
 
@@ -61,7 +61,7 @@ Note: In a job script, job option lines start with #SBATCH
 
       -\-node_type=NODETYPE
 
-    - a parallel job requesting N nodes of compute node type :ref:`NODETYPE<node types>`
+    - a :ref:`multi node parallel job<mpi jobs>` requesting N nodes of compute node type :ref:`NODETYPE<node types>`
 
   * - -p gpu-short
 

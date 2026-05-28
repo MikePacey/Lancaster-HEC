@@ -65,6 +65,8 @@ while priority will be given to those who are currently running
 fewer jobs. Please check the login node's message of the day for any 
 changes to scheduling.
 
+.. serial job:
+
 An example batch job script
 ---------------------------
 
