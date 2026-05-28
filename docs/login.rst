@@ -1,3 +1,5 @@
+.. _login:
+
 Logging in to the HEC
 =====================
 

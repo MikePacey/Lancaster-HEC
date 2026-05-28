@@ -164,6 +164,8 @@ options for long-term research data archiving.
 Transferring files to and from the HEC
 --------------------------------------
 
+.. _scp:
+
 Transferring files to the HEC from the IUS or a Linux or Mac desktop
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

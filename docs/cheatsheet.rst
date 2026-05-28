@@ -12,13 +12,13 @@ Login, filesotre and data transfer
 .. list-table::
  
   * - *ssh USERNAME@wayland.hec.lancs.ac.uk*
-    - login from a linux desktop
+    - :ref:`login<login>` from a linux desktop
   * - *gpfsquota*
-    - show usage for for HEC :ref:`filestores<filestores>`
+    - show usage for for HEC :ref:`filestores<filestore>`
   * - *scp -r /path/to/my/directory USERNAME@wayland.hec.lancs.ac.uk*
-    -  upload a directory to the HEC from a linux desktop 
+    -  :ref:`upload<scp>` a directory to the HEC from a linux desktop 
   * - *scp -r /path/to/my/directory USERNAME@wayland.hec.lancs.ac.uk*
-    - upload a directory to the HEC from a linux desktop
+    - :ref:`upload<scp>` a directory to the HEC from a linux desktop
   * - *smbclient -k -D folder-path //luna/faculty-code*
     - :ref:`connect to a research folder<smbclient>` on LUNA. Use put and get to upload/download
 
