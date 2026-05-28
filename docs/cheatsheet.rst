@@ -102,3 +102,8 @@ Job Type Templates
          --cpus-per-task=N
     - submit a :ref:`gpu job<gpu jobs>` to the gpu-short queue, requesting N cores, SIZE memory and a single GPU
 
+.. list-table::
+
+  * - three
+    - four
+
