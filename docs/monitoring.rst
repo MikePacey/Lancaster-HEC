@@ -88,6 +88,8 @@ text files and can viewed using standard file paging commands such as ``less``
   from pending to running to completed before you've had chance to view it 
   with ``squeue``.
 
+.. _email:
+
 Email notification of job completion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

@@ -1,3 +1,5 @@
+.. _job arrays:
+
 Job arrays - Submitting multiple similar jobs
 =============================================
 

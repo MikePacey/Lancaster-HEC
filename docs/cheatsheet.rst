@@ -5,7 +5,7 @@ Quick Reference (Cheat Sheet)
 
    This page is a quick reference guide to be used once you are familiar 
    the HEC User Guide. Many entries contain a link to more detailed
-   information one these commands
+   information on these commands
 
 Login, filestore and data transfer
 ----------------------------------
@@ -69,6 +69,8 @@ Enviroment Modules
     - add MODULENAME to the current shell environment
   * - *module rm MODULENAME*
     - remove MODULENAME from the current shell environment
+  * - *module list*
+    - show all :ref:`modules<envmods>` loaded into the current shell environment
   * - *module purge*
     - remove all :ref:`modules<envmods>` from the current environment
 
@@ -102,4 +104,12 @@ Job Type Templates
          #SBATCH --mem=SIZE
          #SBATCH --cpus-per-task=N
     - submit a :ref:`gpu job<gpu jobs>` to the gpu-short queue, requesting N cores, SIZE memory and a single GPU
+  * - .. code-block:: console
 
+         #SBATCH --mail-type=END,FAIL
+         #SBATCH --mail-user=youraddress@lancaster.ac.uk
+    -  send an :ref:`email notification<email>` when a job finishes or fails
+  * - .. code-block::
+
+         #SBATCH -a x-y:z
+    - tuirn the job into a :ref:`job array<job arrays>` running from task ID x through to y in steps of z
