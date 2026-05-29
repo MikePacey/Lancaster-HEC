@@ -41,19 +41,19 @@ Job Monitoring
 .. list-table::
 
   * - *squeue -\-me*
-    - Shows all :ref:`running and pending jobs<squeue>`
+    - shows all :ref:`running and pending jobs<squeue>`
   * - *qcgtop -u USERNAME*
-    - Shows :ref:`CPU and memeory usage summaries<qcgtop>` for all running jobs
+    - shows :ref:`CPU and memeory usage summaries<qcgtop>` for all running jobs
   * - *qtop -u USERNAME*
-    - Shows :ref:`top-style information<qtop>` on all running jobs
+    - shows :ref:`top-style information<qtop>` on all running jobs
   * - *qquota*
-    - Shows :ref:`job resource quotas<qquota>` (CPUs, memory and GPUs)
+    - shows :ref:`job resource quotas<qquota>` (CPUs, memory and GPUs)
   * - *qacct -j JOBID*
-    - Shows :ref:`summary of completed<qacct>` job JOBID
+    - shows :ref:`summary of completed<qacct>` job JOBID
   * - *qslots*
-    - Shows available CPU resource on the cluster
+    - shows available CPU resource on the cluster
   * - *qgpuslots*
-    - Shows available GPU resource on the cluster
+    - shows available GPU resource on the cluster
 
 
 Enviroment Modules
