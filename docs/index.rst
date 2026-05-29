@@ -12,6 +12,7 @@ Contents
    howitworks
    getaccount
    referencing
+   cheatsheet
 
 .. toctree::
    :caption: HEC Basics
