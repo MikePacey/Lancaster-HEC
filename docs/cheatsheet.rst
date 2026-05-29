@@ -4,7 +4,8 @@ Quick Reference (Cheat Sheet)
 .. note::
 
    This page is a quick reference guide to be used once you are familiar 
-   the HEC User Guide
+   the HEC User Guide. Many entries contain a link to more detailed
+   information one these commands
 
 Login, filestore and data transfer
 ----------------------------------
@@ -49,6 +50,11 @@ Job Monitoring
     - Shows :ref:`job resource quotas<qquota>` (CPUs, memory and GPUs)
   * - *qacct -j JOBID*
     - Shows :ref:`summary of completed<qacct>` job JOBID
+  * - *qslots*
+    - Shows available CPU resource on the cluster
+  * - *qgpuslots*
+    - Shows available GPU resource on the cluster
+
 
 Enviroment Modules
 ------------------
