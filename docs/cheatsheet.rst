@@ -43,7 +43,7 @@ Job Monitoring
   * - *squeue -\-me*
     - shows all :ref:`running and pending jobs<squeue>`
   * - *qcgtop -u USERNAME*
-    - shows :ref:`CPU and memeory usage summaries<qcgtop>` for all running jobs
+    - shows :ref:`CPU and memory usage summaries<qcgtop>` for all running jobs
   * - *qtop -u USERNAME*
     - shows :ref:`top-style information<qtop>` on all running jobs
   * - *qquota*
