@@ -112,4 +112,4 @@ Job Type Templates
   * - .. code-block::
 
          #SBATCH -a x-y:z
-    - tuirn the job into a :ref:`job array<job arrays>` running from task ID x through to y in steps of z
+    - turn the job into a :ref:`job array<job arrays>` running from task ID x through to y in steps of z
