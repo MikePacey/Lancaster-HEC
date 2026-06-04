@@ -15,7 +15,7 @@ Login, filestore and data transfer
   * - *ssh USERNAME@wayland.hec.lancs.ac.uk*
     - :ref:`login<login>` from a linux desktop
   * - *gpfsquota*
-    - show usage for for HEC :ref:`filestores<filestore>`
+    - show usage for HEC :ref:`filestores<filestore>`
   * - *scp -r /path/to/my/directory USERNAME@wayland.hec.lancs.ac.uk*
     -  :ref:`upload<scp>` a directory to the HEC from a linux desktop 
   * - *scp -r /path/to/my/directory USERNAME@wayland.hec.lancs.ac.uk*
