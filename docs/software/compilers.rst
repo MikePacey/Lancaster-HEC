@@ -17,7 +17,7 @@ To access the Intel Compiler suite, load the intel module:
 
   module add intel
 
-The Intel Compilers (**icc** for C, **icpc** for C++ and **ifort** 
+The Intel Compilers (**icc**/**icx** for C, **icpc**/**icpx** for C++ and **ifort**/**ifx** 
 for Fortran) can now be invoked. A detailed list of the flags for 
 these compilers can be found in the relevant manual pages.
 
