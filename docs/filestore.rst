@@ -143,14 +143,19 @@ much higher file I/O and bandwidth and lower latency than
 network based storage. Wherever possible create any 
 temporary/transient files in temp.
 
+**Avoid using lots of small files**
+Small files are very inefficient on network filesystems. If you
+have a large data set of small files, consider using the squashfs
+file format to improve performance. See the :ref:`squashfs<small files>`
+section of this guide for details. 
+
 **Clean up your filestore regularly.**
 With the ability to run hundreds of jobs simultaneously, user 
 filestore can quickly become cluttered with files (e.g. job 
 stdout and stderr files). Small files in particular have a relatively high
 space overhead - even a small file will consume 32k of quota due to metadata
 and RAID overheads. An area filled with large numbers of small files can
-exhaust quota 
-more quickly than expected.
+exhaust quota more quickly than expected.
 
 **Offload valuable data to a permanent location.**
 The HEC filestore is intended to enable high performance 

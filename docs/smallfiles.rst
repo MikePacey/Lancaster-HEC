@@ -150,7 +150,7 @@ and squashfs formats. The data set contains around 100,000 small files.
 Acknowledgement and references
 ==============================
 
-Thanks to Richard Gilham and the Isambard AI team for the idea
+Thanks to Richard Gilham and the Isambard-AI team for the idea
 
 See also `Creating SquashFS Images to Support HPC and AI Datasets <https://arxiv.org/pdf/2610.20578>`_
 

@@ -21,6 +21,7 @@ Contents
    login
    linux
    filestore
+   smallfiles
    envmods
 
 .. toctree::
