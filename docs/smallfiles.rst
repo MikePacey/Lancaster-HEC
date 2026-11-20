@@ -15,7 +15,7 @@ processing lots of small files on an HPC system is very inefficient:
   they support a finite (though still large) number of files
 
 While some software applications will compensate for some of these inefficiences using various
-strategies, if you aim to use the same data sets for several jobs we recommend comverting them
+strategies, if you aim to use the same data set for several jobs we recommend converting it
 into the *squashfs* format. This converts sets of files into a single file which acts as a portable, 
 read-only filesystem that can be mounted by local users. Testing on the HEC shows that processing of small files
 can see a 5x-20x speedup when using the squashfs format.
@@ -80,7 +80,7 @@ the following steps:
    fusermount -u MYTEMPDIR
    rmdir MYTEMPDIR
 
-.. Note:
+.. note::
 
 An obvious question to ask would be: If we can already mount a zip file
 as a file system, why convert it to squashfs? The answer is efficiency -
@@ -104,7 +104,7 @@ To tidy up once you've finished:
 
    fusermount -u MYTEMPDIR 
 
-.. Note:
+.. note::
 
 Mounting a filesystem on a server only makes it accessible from that server. So, if
 you mount it on the login node, it won't be visible to your jobs as they run on different
@@ -114,19 +114,19 @@ servers. So the squashfs filesystem will need to be mounted for each job
 
 Make sure each job has a unique temprary directory for its squashfs mountpoint to prevent
 multiple jobs running on the same compute node from interferring with each other.
-Here's a sample job script which creates a uniquely named temporary directory
-for each job based on its Job ID and Task ID (if it's a job array):
+Here's an example script that creates the mountpoint in a job's unique temporary
+directory.
 
 .. code-block:: sh
 
-  #!/bin/bash
+#!/bin/bash
 
   #SBATCH -p serial
   #SBATCH -J testjob
 
   source /etc/profile
 
-  UNINQUEDIR=MYTEMPDIR-${SLURM_JOB_ID}_${SLURM_ARRAY_TASK_ID}
+  UNINQUEDIR=${TMPDIR}/MYTEMPMOUNT
 
   mkdir ${UNINQUEDIR}
   squashfuse MYSQUASHFILE ${UNINQUEDIR}
@@ -137,13 +137,8 @@ for each job based on its Job ID and Task ID (if it's a job array):
 
   # Cleanup
 
-  fusermount -u${UNINQUEDIR}
+  fusermount -u ${UNINQUEDIR}
   rmdir ${UNINQUEDIR}
-
-.. Tip:
-
-   Converting data sets to squashfs format can take a while, but the efficiency gains are
-   worth it
 
 Example Test Data
 =================
@@ -157,5 +152,5 @@ Acknowledgement and references
 
 Thanks to Richard Gilham and the Isambard AI team for the idea
 
-See also `Creating SquashFS Images to Support HPC and AI Datasets <https://arxiv.org/pdf/2610.20578>_
+See also `Creating SquashFS Images to Support HPC and AI Datasets <https://arxiv.org/pdf/2610.20578>`_
 
