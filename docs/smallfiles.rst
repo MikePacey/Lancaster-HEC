@@ -119,7 +119,7 @@ directory.
 
 .. code-block:: sh
 
-#!/bin/bash
+  #!/bin/bash
 
   #SBATCH -p serial
   #SBATCH -J testjob
