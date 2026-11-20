@@ -145,7 +145,7 @@ Example Test Data
 
 If you want to practice with some pre-prepared data, the directory /data/hpc/aclImdb contains copies of the 
 publically available `Large Movie Review Dataset <https://ai.stanford.edu/~amaas/data/sentiment/>`_ in tar, zip 
-and squashfs formats
+and squashfs formats. The data set contains around 100,000 small files.
 
 Acknowledgement and references
 ==============================
